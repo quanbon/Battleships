@@ -45,7 +45,7 @@ void Battleships::Board::display_board() {
 
 void Battleships::Board::place_ship(int col_pos, int row_pos, int ship_size) {
     for(int i = 0; i < ship_size; ++i) {
-        boardContents.at(col_pos).at(row_pos+i) = 'X';
+        boardContents.at(col_pos+i).at(row_pos) = 'X';
     }
 
 
