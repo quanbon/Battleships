@@ -13,7 +13,7 @@ int main() {
 
     b.display_board();
 
-    b.place_ship(2, 3, 5);
+    b.place_ship(0, 0, 6);
     b.display_board();
 
     //Hello Mister Harley
