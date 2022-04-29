@@ -5,10 +5,12 @@
 #ifndef BATTLESHIPS_MOVE_H
 #define BATTLESHIPS_MOVE_H
 
+namespace BattleShip {
+    class Move {
 
-class Move {
+    };
+}
 
-};
 
 
 #endif //BATTLESHIPS_MOVE_H
