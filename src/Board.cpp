@@ -24,7 +24,7 @@ int Battleships::Board::get_num_cols() const {
 //Code from Google Drive -- Loops through a vector of strings
 void Battleships::Board::display_board() {
     //Prints out the col header
-    std::cout << " ";
+    std::cout << "  ";
     for(int i = 0; i < get_num_cols(); ++i) {
         std::cout << i << ' ';
     }
