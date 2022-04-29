@@ -6,5 +6,10 @@ int main() {
     Battleships::Board a(10, 10);
     a.display_board();
 
+    //Just Testing if git works here
+    Battleships::Board b(7, 7);
+    b.display_board();
+
+
     return 0;
 }
