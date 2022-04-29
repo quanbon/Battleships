@@ -5,8 +5,3 @@
 #include "Ships.h"
 #include <iostream>
 
-// std::cout << "Hello" << std::endl;
-#include <iostream>
-
-// std::cout << "Hello" << std::endl;
-// std::cin << blah;
