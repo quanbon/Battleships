@@ -8,7 +8,6 @@
 namespace BattleShip {
     class Ships {
 
-
     };
 }
 
