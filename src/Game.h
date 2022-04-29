@@ -5,10 +5,12 @@
 #ifndef BATTLESHIPS_GAME_H
 #define BATTLESHIPS_GAME_H
 
+namespace BattleShip {
+    class Game {
 
-class Game {
+    };
+}
 
-};
 
 
 #endif //BATTLESHIPS_GAME_H
