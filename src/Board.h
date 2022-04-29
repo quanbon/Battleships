@@ -15,7 +15,10 @@ namespace Battleships {
         int get_num_rows() const;
         int get_num_cols() const;
 
+
         void display_board();
+
+        void place_ship(int col_pos, int row_pos, int ship_size);
 
     private:
         //Code from Google Drive
