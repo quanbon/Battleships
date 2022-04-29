@@ -7,7 +7,7 @@
 #include <vector>
 #include <string>
 
-namespace Battleships {
+namespace BattleShip {
     class Board {
     public:
         Board(int num_row, int num_col);
