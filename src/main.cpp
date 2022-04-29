@@ -8,6 +8,9 @@ int main() {
 
     //Just Testing if git works here
     Battleships::Board b(7, 7);
+
+    std::cout << std::endl;
+
     b.display_board();
 
 
