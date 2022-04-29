@@ -7,7 +7,7 @@
 
 namespace BattleShip {
     class Move {
-
+        fuck me
     };
 }
 
