@@ -7,7 +7,13 @@
 
 namespace BattleShip {
     class Ships {
+    public:
 
+
+    private:
+
+        const char ship_name;
+        const int ship_length;
     };
 }
 
