@@ -3,4 +3,4 @@ project(Battleships)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Battleships main.cpp Players.cpp Players.h Game.cpp Game.h Ships.cpp Ships.h Board.cpp Board.h Move.cpp Move.h Input_Validation.cpp Input_Validation.h)
+add_executable(Battleships main.cpp Players.cpp Players.h Game.cpp Game.h Ships.cpp Ships.h Board.cpp Board.h Move.cpp Move.h Input_Validation.cpp Input_Validation.h file_reader.cpp file_reader.h)

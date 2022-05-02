@@ -116,6 +116,12 @@
 		<Unit filename="/cygdrive/c/Battleships/src/Ships.h">
 			<Option target="Battleships"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Battleships/src/file_reader.cpp">
+			<Option target="Battleships"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Battleships/src/file_reader.h">
+			<Option target="Battleships"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Battleships/src/main.cpp">
 			<Option target="Battleships"/>
 		</Unit>

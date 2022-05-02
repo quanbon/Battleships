@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/cygdrive/c/Battleships/src/Move.cpp" "CMakeFiles/Battleships.dir/Move.cpp.o" "gcc" "CMakeFiles/Battleships.dir/Move.cpp.o.d"
   "/cygdrive/c/Battleships/src/Players.cpp" "CMakeFiles/Battleships.dir/Players.cpp.o" "gcc" "CMakeFiles/Battleships.dir/Players.cpp.o.d"
   "/cygdrive/c/Battleships/src/Ships.cpp" "CMakeFiles/Battleships.dir/Ships.cpp.o" "gcc" "CMakeFiles/Battleships.dir/Ships.cpp.o.d"
+  "/cygdrive/c/Battleships/src/file_reader.cpp" "CMakeFiles/Battleships.dir/file_reader.cpp.o" "gcc" "CMakeFiles/Battleships.dir/file_reader.cpp.o.d"
   "/cygdrive/c/Battleships/src/main.cpp" "CMakeFiles/Battleships.dir/main.cpp.o" "gcc" "CMakeFiles/Battleships.dir/main.cpp.o.d"
   )
 

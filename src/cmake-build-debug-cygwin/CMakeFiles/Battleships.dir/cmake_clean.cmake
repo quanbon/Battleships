@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battleships.dir/Players.cpp.o.d"
   "CMakeFiles/Battleships.dir/Ships.cpp.o"
   "CMakeFiles/Battleships.dir/Ships.cpp.o.d"
+  "CMakeFiles/Battleships.dir/file_reader.cpp.o"
+  "CMakeFiles/Battleships.dir/file_reader.cpp.o.d"
   "CMakeFiles/Battleships.dir/main.cpp.o"
   "CMakeFiles/Battleships.dir/main.cpp.o.d"
   "libBattleships.dll.a"

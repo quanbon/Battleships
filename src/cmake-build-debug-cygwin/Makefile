@@ -273,6 +273,30 @@ Ships.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Ships.cpp.s
 .PHONY : Ships.cpp.s
 
+file_reader.o: file_reader.cpp.o
+.PHONY : file_reader.o
+
+# target to build an object file
+file_reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.o
+.PHONY : file_reader.cpp.o
+
+file_reader.i: file_reader.cpp.i
+.PHONY : file_reader.i
+
+# target to preprocess a source file
+file_reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.i
+.PHONY : file_reader.cpp.i
+
+file_reader.s: file_reader.cpp.s
+.PHONY : file_reader.s
+
+# target to generate assembly for a file
+file_reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.s
+.PHONY : file_reader.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -324,6 +348,9 @@ help:
 	@echo "... Ships.o"
 	@echo "... Ships.i"
 	@echo "... Ships.s"
+	@echo "... file_reader.o"
+	@echo "... file_reader.i"
+	@echo "... file_reader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
