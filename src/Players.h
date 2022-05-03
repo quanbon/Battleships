@@ -14,6 +14,7 @@ namespace BattleShip {
         Player();
 
         void set_name(const std::string& player_name);
+        void set_board();
 
 
     private:

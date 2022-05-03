@@ -10,11 +10,16 @@
 namespace BattleShip {
     class Game {
     public:
-        void config_game();
+        Game();
 
+        void configure_game(std::ifstream& configuration_file, int &board_num_rows, int &board_num_cols, std::vector<BattleShip::Ships>& ship_container);
 
+        void setup_game();
     private:
         std::vector<std::unique_ptr<Player>> players;
+        int board_num_row;
+        int board_num_col;
+
         int playerTurn;
 
     };
