@@ -20,6 +20,8 @@ namespace BattleShip {
 
         void place_ship(int col_pos, int row_pos, int ship_size);
 
+        Board& operator = (const Board& b);
+
     private:
         //Code from Google Drive
         std::vector<std::string> boardContents;

@@ -5,3 +5,11 @@
 #include "Ships.h"
 #include <iostream>
 
+BattleShip::Ships::Ships() {
+
+}
+
+BattleShip::Ships::Ships(char name, int length) : ship_name(name), ship_length(length) {
+
+}
+

@@ -1,21 +1,19 @@
 #include <iostream>
-#include "board.h"
+#include <fstream>
+#include "Board.h"
+#include "Players.h"
+#include "file_reader.h"
 
-int main() {
-    Battleships::Board a(10, 10);
-    a.display_board();
+int main(int argc, char* argv[]) {
+    int board_num_rows, board_num_cols;
+    std::vector<BattleShip::Ships> ship_container;
+    std::ifstream configuration_file;
+    configuration_file.open(argv[1]);
+    read_config_file(configuration_file, board_num_rows, board_num_cols, ship_container);
 
-    //Just Testing if git works here
-    Battleships::Board b(7, 7);
 
-    std::cout << std::endl;
 
-    b.display_board();
 
-    b.place_ship(0, 0, 6);
-    b.display_board();
-
-    //Hello Mister Harley
 
 
     return 0;

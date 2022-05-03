@@ -3,3 +3,13 @@
 //
 
 #include "Players.h"
+
+
+BattleShip::Player::Player() {
+
+}
+
+void BattleShip::Player::set_name(const std::string &player_name) {
+    name = player_name;
+
+}
