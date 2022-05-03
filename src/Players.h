@@ -14,14 +14,15 @@ namespace BattleShip {
         Player();
 
         void set_name(const std::string& player_name);
-        void set_board();
+        void set_board(int row, int col);
+        void set_ships(std::vector<BattleShip::Ships>& ship_vector);
 
 
     private:
         std::string name;
-        //Board placement_board;
-        //Board firing_board;
-        //std::vector<BattleShip::Ships>;
+//        Board placement_board;
+//        Board firing_board;
+        std::vector<BattleShip::Ships> player_ships;
 
 
     };

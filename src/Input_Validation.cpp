@@ -49,8 +49,8 @@ std::string get_ship_direction_choice() {
                          "Your choice: ";
 
     while(true) {
-        std::cout << name; //needs player name
-        std::cout << ", do you want to place " << ship_name << prompt; //needs ship name
+        //std::cout << name; //needs player name
+        //std::cout << ", do you want to place " << ship_name << prompt; //needs ship name
         std::getline(std::cin, line);
         std::stringstream line2parse(line);
         std::string word;
@@ -78,4 +78,6 @@ bool is_col_inbound (const int& user_col_choice, const int& num_cols) {
         return false;
     } else { return true; }
 }
+
+
 
