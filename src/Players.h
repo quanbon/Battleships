@@ -20,8 +20,8 @@ namespace BattleShip {
 
     private:
         std::string name;
-//        Board placement_board;
-//        Board firing_board;
+        Board placement_board;
+        Board firing_board;
         std::vector<BattleShip::Ships> player_ships;
 
 

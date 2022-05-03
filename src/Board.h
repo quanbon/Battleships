@@ -10,6 +10,7 @@
 namespace BattleShip {
     class Board {
     public:
+        Board();
         Board(int num_row, int num_col);
 
         int get_num_rows() const;
@@ -20,13 +21,12 @@ namespace BattleShip {
 
         void place_ship(int col_pos, int row_pos, int ship_size);
 
-        Board& operator = (const Board& b);
 
     private:
         //Code from Google Drive
         std::vector<std::string> boardContents;
-        const int num_row;
-        const int num_col;
+        int num_row;
+        int num_col;
 
 
 

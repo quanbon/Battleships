@@ -71,6 +71,7 @@ bool is_col_inbound (const int& user_col_choice, const int& num_cols) {
 }
 
 bool is_there_space_conflict() {
+    return false;
 
 }
 

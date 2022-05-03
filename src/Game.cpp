@@ -36,10 +36,11 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
 void BattleShip::Game::setup_game() {
     const int num_players = 2;
     for(int i = 0; i < num_players; ++i) {
-        std::unique_ptr<Player> player;
+        std::unique_ptr<Player> player = std::make_unique<Player>();
         //player->set_name("Some name");
-        //player->set_board(this->board_num_row, this->board_num_row);
-        //player->set_ships(this->ship_container);
+        player->set_board(this->board_num_row, this->board_num_row);
+        player->set_ships(this->ship_container);
+        this->players.push_back(std::move(player));
 
     }
 

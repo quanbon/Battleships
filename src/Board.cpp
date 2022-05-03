@@ -5,6 +5,9 @@
 #include "Board.h"
 #include <iostream>
 
+BattleShip::Board::Board() {
+
+}
 
 //Code from Google Drive
 BattleShip::Board::Board(int num_row, int num_col) : boardContents(num_row, std::string(num_col, '*')),
