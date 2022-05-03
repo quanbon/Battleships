@@ -3,6 +3,7 @@
 //
 
 #include "Input_Validation.h"
+#include "Ships.h"
 #include <vector>
 #include <sstream>
 #include <iostream>
@@ -20,16 +21,6 @@ void lower(std::string& string) {
     lowerInPlace(string);
 }
 
-std::string clean_string(std::string string) {
-    auto user_choice = string;
-    lower(user_choice);
-    user_choice.erase(remove(user_choice.begin(), user_choice.end(), '('), user_choice.end());
-    user_choice.erase(remove(user_choice.begin(), user_choice.end(), ')'), user_choice.end());
-    user_choice.erase(user_choice.begin() + 1, user_choice.end());
-
-    return user_choice;
-}
-
 bool is_valid_placement(const std::string& word_to_check) {
     std::string word_check = word_to_check;
     lower(word_check);
@@ -42,14 +33,14 @@ bool is_valid_placement(const std::string& word_to_check) {
     return false;
 }
 
-std::string get_ship_direction_choice() {
+std::string get_ship_direction_choice(std::string player_name, char ship_name) {
     std::string line;
     std::string prompt = " horizontally or vertically?\n "
                          "Enter h for horizontal or v for vertical\n"
                          "Your choice: ";
 
     while(true) {
-        std::cout << name; //needs player name
+        std::cout << player_name; //needs player name
         std::cout << ", do you want to place " << ship_name << prompt; //needs ship name
         std::getline(std::cin, line);
         std::stringstream line2parse(line);
@@ -79,3 +70,28 @@ bool is_col_inbound (const int& user_col_choice, const int& num_cols) {
     } else { return true; }
 }
 
+bool is_there_space_conflict() {
+
+}
+
+
+void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string player_name, char ship_name, int ship_length) {
+    std::string line;
+    std::string prompt = " long, at with a space in between row and col: ";
+
+    while (true) {
+        std::cout << player_name;
+        std::cout << ", enter the row and column you want to place "
+                  << ship_name << ", which is " << ship_length << prompt;
+        std::getline(std::cin, line); //grabs the entire line
+        std::stringstream line2parse(line);
+        line2parse >> num_rows >> num_cols;
+        if (line2parse) { //if I was able to read the number
+            std::string what_is_left;
+            line2parse >> what_is_left;
+            if (not line2parse) { //if there is nothing left we will fail to read it
+                return;
+            }
+        }
+    }
+}
