@@ -8,6 +8,7 @@
 namespace BattleShip {
     class Ships {
     public:
+        Ships ();
 
 
     private:
