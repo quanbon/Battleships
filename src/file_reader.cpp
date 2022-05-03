@@ -11,13 +11,13 @@
 
 
 void read_config_file (std::ifstream& src, int& num_rows, int& num_cols, std::vector<BattleShip::Ships>& ship_container) {
-    int row, col, ship_container_size;
-    src >> row;
-    src >> col;
+    int ship_container_size;
+    src >> num_rows;
+    src >> num_cols;
     src >> ship_container_size;
 
-    std::cout<< row << std::endl;
-    std::cout<< col << std::endl;
+    std::cout<< num_rows << std::endl;
+    std::cout<< num_cols << std::endl;
 
     for(int i = 0; i < ship_container_size; ++i) {
         char ship_name;
