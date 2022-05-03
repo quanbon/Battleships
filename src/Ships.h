@@ -8,12 +8,16 @@
 namespace BattleShip {
     class Ships {
     public:
+        Ships();
+
+        Ships(char name, int length);
+
 
 
     private:
 
-        const char ship_name;
-        const int ship_length;
+        char ship_name;
+        int ship_length;
     };
 }
 

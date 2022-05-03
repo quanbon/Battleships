@@ -9,15 +9,18 @@
 #include "Ships.h"
 
 namespace BattleShip {
-    class Players {
+    class Player {
     public:
+        Player();
+
+        void set_name(const std::string& player_name);
 
 
     private:
-        const std::string name;
-        BattleShip::Board placement_board;
-        BattleShip::Board firing_board;
-        std::vector<BattleShip::Ships>;
+        std::string name;
+        //Board placement_board;
+        //Board firing_board;
+        //std::vector<BattleShip::Ships>;
 
 
     };

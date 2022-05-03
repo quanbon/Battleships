@@ -3,18 +3,35 @@
 //
 
 #include <fstream>
+#include <iostream>
+#include <vector>
 #include "Ships.h"
 #include "file_reader.h"
 
-void read_file (std::ifstream& src, int& num_rows, int& num_cols) {
-    num_rows = src.get(); // If the file is always valid, the first
-    num_cols = src.get(); // 3 integers we get will be the rows, cols
-    const int num_ships = src.get(); // and the amount of ships that we need.
 
-    for (int i = 0; i < num_ships; i++) {
+
+void read_config_file (std::ifstream& src, int& num_rows, int& num_cols, std::vector<BattleShip::Ships>& ship_container) {
+    int row, col, ship_container_size;
+    src >> row;
+    src >> col;
+    src >> ship_container_size;
+
+    std::cout<< row << std::endl;
+    std::cout<< col << std::endl;
+
+    for(int i = 0; i < ship_container_size; ++i) {
+        char ship_name;
+        int ship_length;
         src >> ship_name;
         src >> ship_length;
 
-        // put into an unordered map or vector to store the name
+        BattleShip::Ships new_ship(ship_name, ship_length);
+
+        ship_container.push_back(new_ship);
+        std::cout<< "Ship name: " << ship_name << std::endl;
+        std::cout<< "Ship length: " << ship_length << std::endl;
+
     }
+
 }
+
