@@ -20,6 +20,8 @@ namespace BattleShip {
         std::string get_name();
         void display_placement_board();
 
+        Board get_placement_board();
+
 
     private:
         std::string name;

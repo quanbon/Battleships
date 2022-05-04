@@ -15,11 +15,12 @@ namespace BattleShip {
 
         int get_num_rows() const;
         int get_num_cols() const;
-
-
         void display_board();
-
-        void place_ship(int col_pos, int row_pos, int ship_size);
+        void place_ship(int col_pos, int row_pos, int ship_size, char ship_name, std::string orientation);
+        bool in_bounds_vertical(int row_pos, int ship_size) const;
+        bool in_bounds_horizontal(int col_pos, int ship_size) const;
+        bool in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
+//        bool overlap_check();
 
 
     private:
@@ -27,10 +28,6 @@ namespace BattleShip {
         std::vector<std::string> boardContents;
         int num_row;
         int num_col;
-
-
-
-
     };
 }
 

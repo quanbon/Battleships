@@ -7,6 +7,12 @@
 
 namespace BattleShip {
     class Move {
+    public:
+
+    private:
+        char ship_orientation;
+        int row_choice;
+        int col_choice;
 
     };
 }
