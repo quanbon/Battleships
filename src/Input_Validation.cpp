@@ -4,6 +4,7 @@
 
 #include "Input_Validation.h"
 #include "Ships.h"
+#include "Board.h"
 #include <vector>
 #include <sstream>
 #include <iostream>
@@ -76,9 +77,10 @@ bool is_col_inbound (const int& user_col_choice, const int& num_cols, int ship_l
 
 
 void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string player_name, char ship_name,
-                                   int ship_length, std::string choice_of_orientation) { //added choice of orientation to see if I could make an if else with
+                                   int ship_length, std::string orientation_choice) { //added choice of orientation to see if I could make an if else with
                                                                                          //the option they choose so if they choose vertical or horizontal
                                                                                          // I check either row or col accordingly :)))
+
     std::string line;
     std::string prompt = " long, at with a space in between row and col: ";
 
@@ -89,6 +91,19 @@ void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string pla
         std::getline(std::cin, line); //grabs the entire line
         std::stringstream line2parse(line);
         line2parse >> num_rows >> num_cols;
+        if (orientation_choice == "v" || orientation_choice == "V") {
+            // this should first check if the coord is inbound, then it should check if the ship length would be inside
+            // the board, THEN LATER IMPLEMENT if it might cross over another ship
+            // to get ship length it would be like cur_ship.get_ship_length();
+            if (is_row_inbound(num_rows, ship_name.get_num_rows(), ship_name.get_ship_length())) {
+
+            }
+
+        } else if (orientation_choice == "h" || orientation_choice == "H" ) {
+            if () {
+
+            }
+        }
 
         if (line2parse) { //if I was able to read the number
             std::string what_is_left;

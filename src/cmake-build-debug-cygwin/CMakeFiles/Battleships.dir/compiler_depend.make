@@ -196,48 +196,51 @@ CMakeFiles/Battleships.dir/Game.cpp.o: ../Game.cpp \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/hash_bytes.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/range_access.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/vector.tcc \
-  ../Players.h \
-  ../Board.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/string \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/memory \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_tempbuf.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_raw_storage_iter.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/align.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bit \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/machine/_default_types.h \
+  /usr/include/sys/features.h \
+  /usr/include/_newlib_version.h \
+  /usr/include/sys/_intsup.h \
+  /usr/include/sys/_stdint.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/uses_allocator.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/unique_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/utility \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_relops.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/tuple \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/array \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/invoke.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_function.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward/binders.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/iosfwd \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stringfwd.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/char_traits.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/postypes.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cwchar \
   /usr/include/wchar.h \
   /usr/include/_ansi.h \
   /usr/include/newlib.h \
-  /usr/include/_newlib_version.h \
   /usr/include/sys/config.h \
   /usr/include/machine/ieeefp.h \
-  /usr/include/sys/features.h \
   /usr/include/cygwin/config.h \
   /usr/include/sys/reent.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/stddef.h \
   /usr/include/sys/_types.h \
   /usr/include/machine/_types.h \
-  /usr/include/machine/_default_types.h \
   /usr/include/sys/lock.h \
   /usr/include/sys/cdefs.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/stdarg.h \
   /usr/include/sys/_locale.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cstdint \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/sys/_intsup.h \
-  /usr/include/sys/_stdint.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/localefwd.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/c++locale.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/clocale \
-  /usr/include/locale.h \
-  /usr/include/_ansi.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/iosfwd \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cctype \
-  /usr/include/ctype.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/ostream_insert.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/cxxabi_forced.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_function.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward/binders.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/basic_string.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_base.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/typeinfo \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/allocated_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/refwrap.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/aligned_buffer.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/atomicity.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/gthr.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/gthr-default.h \
@@ -259,6 +262,7 @@ CMakeFiles/Battleships.dir/Game.cpp.o: ../Game.cpp \
   /usr/include/bits/wordsize.h \
   /usr/include/sys/sysmacros.h \
   /usr/include/signal.h \
+  /usr/include/_ansi.h \
   /usr/include/sys/signal.h \
   /usr/include/cygwin/signal.h \
   /usr/include/sys/ucontext.h \
@@ -268,6 +272,29 @@ CMakeFiles/Battleships.dir/Game.cpp.o: ../Game.cpp \
   /usr/include/machine/time.h \
   /usr/include/cygwin/time.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/atomic_word.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/concurrence.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/exception \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/exception_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/cxxabi_init_exception.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/nested_exception.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_atomic.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_lockfree_defines.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward/auto_ptr.h \
+  ../Players.h \
+  ../Board.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/string \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/char_traits.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cstdint \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/localefwd.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/c++locale.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/clocale \
+  /usr/include/locale.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cctype \
+  /usr/include/ctype.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/ostream_insert.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/cxxabi_forced.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/basic_string.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/string_conversions.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cstdlib \
   /usr/include/stdlib.h \
@@ -290,11 +317,6 @@ CMakeFiles/Battleships.dir/Game.cpp.o: ../Game.cpp \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/fstream \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/istream \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ios \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/exception \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/exception_ptr.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/cxxabi_init_exception.h \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/typeinfo \
-  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/nested_exception.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/ios_base.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/locale_classes.h \
   /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/locale_classes.tcc \
@@ -1092,6 +1114,28 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
   ../Players.h \
   ../Ships.h \
   ../Game.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/memory \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_tempbuf.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_raw_storage_iter.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/align.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bit \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/uses_allocator.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/unique_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/utility \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_relops.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/tuple \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/array \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/invoke.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_base.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/allocated_ptr.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/refwrap.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/aligned_buffer.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/concurrence.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_atomic.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_lockfree_defines.h \
+  /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward/auto_ptr.h \
   ../file_reader.h
 
 
@@ -1100,12 +1144,6 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 ../Ships.cpp:
 
 ../Move.h:
-
-/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_tempbuf.h:
-
-/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_algo.h:
-
-/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/utility:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/sstream:
 
@@ -1127,13 +1165,39 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 
 ../Input_Validation.h:
 
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/concurrence.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/refwrap.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/allocated_ptr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_algo.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/invoke.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/tuple:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/utility:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/unique_ptr.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bit:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_tempbuf.h:
+
 ../Game.cpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_base.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/istream.tcc:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/istream:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/ctype_inline.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/aligned_buffer.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/streambuf_iterator.h:
 
@@ -1199,15 +1263,21 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/sys/stdio.h:
 
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/uses_allocator.h:
+
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/alloc_traits.h:
 
 /usr/include/sys/reent.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_construct.h:
 
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/atomic_lockfree_defines.h:
+
 /usr/include/sys/features.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/ext/type_traits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward/auto_ptr.h:
 
 ../Board.cpp:
 
@@ -1244,6 +1314,8 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/cstdint:
 
 ../Move.cpp:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_raw_storage_iter.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/vector:
 
@@ -1296,6 +1368,8 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/type_traits:
 
 /usr/include/cygwin/wait.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_atomic.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/stl_iterator_base_types.h:
 
@@ -1361,6 +1435,8 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin/bits/c++locale.h:
 
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/memory:
+
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/basic_string.h:
 
 /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/iosfwd:
@@ -1424,6 +1500,12 @@ CMakeFiles/Battleships.dir/main.cpp.o: ../main.cpp \
 /usr/include/pthread.h:
 
 /usr/include/signal.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/shared_ptr_base.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/array:
+
+/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/align.h:
 
 /usr/include/sched.h:
 

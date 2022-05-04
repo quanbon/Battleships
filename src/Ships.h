@@ -14,13 +14,15 @@ namespace BattleShip {
 
         char get_ship_name();
         int get_ship_length();
-
+        char get_ship_orientation();
 
 
     private:
-
+        char ship_orientation;
         char ship_name;
         int ship_length;
+
+
     };
 }
 
