@@ -3,16 +3,18 @@
 //
 
 #include "Players.h"
+#include "Input_Validation.h"
 
 
 BattleShip::Player::Player() {
-//    this->placement_board = Board(1, 1);
-//    this->firing_board = Board(1, 1);
+
 
 }
 
-void BattleShip::Player::set_name(const std::string &player_name) {
-    this->name = player_name;
+
+
+void BattleShip::Player::set_name(int player_num) {
+    this->name = get_player_name(player_num);
 
 }
 
@@ -25,6 +27,16 @@ void BattleShip::Player::set_board(int row, int col) {
 
 void BattleShip::Player::set_ships(std::vector<BattleShip::Ships>& ship_vector) {
     this->player_ships = ship_vector;
+
+}
+
+void BattleShip::Player::display_placement_board() {
+    this->placement_board.display_board();
+
+}
+
+std::string BattleShip::Player::get_name() {
+    return this->name;
 
 }
 

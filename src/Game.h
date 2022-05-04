@@ -13,7 +13,9 @@ namespace BattleShip {
         Game();
 
         void configure_game(std::ifstream& src);
-
+        void set_player_board_and_ship();
+        BattleShip::Player& get_current_player();
+        void change_player_turn();
         void setup_game();
     private:
         std::vector<std::unique_ptr<Player>> players;

@@ -12,6 +12,9 @@ namespace BattleShip {
 
         Ships(char name, int length);
 
+        char get_ship_name();
+        int get_ship_length();
+
 
 
     private:
