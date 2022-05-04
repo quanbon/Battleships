@@ -21,3 +21,7 @@ char BattleShip::Ships::get_ship_name() {
 int BattleShip::Ships::get_ship_length() {
     return this->ship_length;
 }
+
+char BattleShip::Ships::get_ship_orientation() {
+    return this->ship_orientation;
+}
