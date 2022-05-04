@@ -44,13 +44,13 @@ void BattleShip::Game::setup_game() {
             char ship_name  = ships.get_ship_name();
             int ship_length = ships.get_ship_length();
 
+            //while loop here (while true)
             get_ship_direction_choice(cur_player.get_name(), ship_name);
+            //if(not valid ship position) {
+            //get_coords_for_ship_placement(this->board_num_row, this->board_num_col, cur_player.get_name(), ship_name, ship_length);
+            // continue
+            // else break;
 
-
-
-            //get player horizontal/vertical placement
-            //get player row_col placement position
-            //if invalid ask again for horizontal/vertical
         }
         //Update and display board
 
