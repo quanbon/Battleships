@@ -3,9 +3,11 @@
 //
 
 #include "Game.h"
+#include "Board.h"
 #include "Input_Validation.h"
 #include "file_reader.h"
 #include <fstream>
+#include <iostream>
 
 BattleShip::Game::Game() {
 
@@ -29,6 +31,7 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
         ship_container.push_back(new_ship);
     }
     set_player_board_and_ship();
+
 }
 
 
@@ -37,26 +40,36 @@ void BattleShip::Game::setup_game() {
     for(int i = 0; i < 2; ++i) {
         Player& cur_player = get_current_player();
         cur_player.set_name(playerTurn);
-        cur_player.display_placement_board();
 
         //For loop that goes through the container of the ships
         for (auto ships: ship_container) {
             char ship_name  = ships.get_ship_name();
             int ship_length = ships.get_ship_length();
+            std::string orientation_choice;
+            int row_choice, col_choice;
 
-            //while loop here (while true)
-            get_ship_direction_choice(cur_player.get_name(), ship_name);
-            //if(not valid ship position) {
-            //get_coords_for_ship_placement(this->board_num_row, this->board_num_col, cur_player.get_name(), ship_name, ship_length);
-            // continue
-            // else break;
+            cur_player.display_placement_board();
+
+            while (true) {
+                get_ship_direction_choice(cur_player.get_name(), ship_name, orientation_choice);
+                get_two_ints(cur_player.get_name(), ship_name, ship_length, row_choice, col_choice);
+               if(cur_player.get_placement_board().in_bounds_check(row_choice, col_choice, ship_length, orientation_choice)) {
+                   break;
+               } else {
+                   continue;
+               }
+            }
+
+            cur_player.get_placement_board().place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
+
+
+
 
         }
         //Update and display board
 
         //Change player turn
         change_player_turn();
-
 
     }
 }
@@ -83,5 +96,7 @@ void BattleShip::Game::set_player_board_and_ship() {
         this->players.push_back(std::move(player));
     }
 }
+
+
 
 

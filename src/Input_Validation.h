@@ -13,7 +13,7 @@ void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string pla
 
 std::string get_player_name(int player_num);
 
-std::string get_ship_direction_choice(std::string player_name, char ship_name);
-
+void get_ship_direction_choice(std::string player_name, char ship_name, std::string& ship_orientation);
+void get_two_ints(std::string player_name, char ship_name, int ship_size, int& num1, int& num2);
 
 #endif //BATTLESHIPS_INPUT_VALIDATION_H

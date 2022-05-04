@@ -40,4 +40,8 @@ std::string BattleShip::Player::get_name() {
 
 }
 
+BattleShip::Board BattleShip::Player::get_placement_board() {
+    return this->placement_board;
+}
+
 
