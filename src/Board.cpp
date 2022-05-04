@@ -47,15 +47,15 @@ void BattleShip::Board::display_board() {
 }
 
 void BattleShip::Board::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation)  {
-    if(orientation == "H" or "h") {
+    if(orientation == "H" or orientation == "h") {
         for(int i = 0; i < ship_size; ++i) {
-            this->boardContents.at(col_pos).at(row_pos+i) = ship_name;
+            this->boardContents.at(col_pos+i).at(row_pos) = ship_name;
         }
     }
 
-    if(orientation == "V" or "v") {
+    if(orientation == "V" or orientation == "v") {
         for(int i = 0; i < ship_size; ++i) {
-            this->boardContents.at(col_pos+i).at(row_pos) = ship_name;
+            this->boardContents.at(col_pos).at(row_pos+i) = ship_name;
         }
     }
 
