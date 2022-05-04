@@ -35,7 +35,7 @@ bool is_valid_placement(const std::string& word_to_check) {
 
 std::string get_ship_direction_choice(std::string player_name, char ship_name) {
     std::string line;
-    std::string prompt = " horizontally or vertically?\n "
+    std::string prompt = " horizontally or vertically?\n"
                          "Enter h for horizontal or v for vertical\n"
                          "Your choice: ";
 
@@ -95,6 +95,25 @@ void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string pla
             line2parse >> what_is_left;
             if (not line2parse) { //if there is nothing left we will fail to read it
                 return;
+            }
+        }
+    }
+}
+
+std::string get_player_name(int player_num) {
+    std::string line;
+
+    while(true) {
+        std::cout << "Player " << player_num + 1 << " please enter your name: ";
+        std::getline(std::cin, line);
+        std::stringstream line2parse(line);
+        std::string word;
+        line2parse >> word;
+        if (line2parse) {
+            std:: string what_is_left;
+            line2parse >>what_is_left;
+            if (not line2parse) {
+                return word;
             }
         }
     }

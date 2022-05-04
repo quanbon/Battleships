@@ -7,10 +7,13 @@
 
 #include <string>
 
-class Input_Validation {
-    void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string player_name, char ship_name,
+
+void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string player_name, char ship_name,
                                        int ship_length);
-};
+
+std::string get_player_name(int player_num);
+
+std::string get_ship_direction_choice(std::string player_name, char ship_name);
 
 
 #endif //BATTLESHIPS_INPUT_VALIDATION_H
