@@ -5,6 +5,7 @@
 #ifndef BATTLESHIPS_GAME_H
 #define BATTLESHIPS_GAME_H
 #include <vector>
+#include <memory>
 #include "Players.h"
 
 namespace BattleShip {
