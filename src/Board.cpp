@@ -47,13 +47,13 @@ void BattleShip::Board::display_board() {
 }
 
 void BattleShip::Board::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation)  {
-    if(orientation == "H" or "h") {
+    if(orientation == "H" or orientation == "h") {
         for(int i = 0; i < ship_size; ++i) {
             this->boardContents.at(col_pos).at(row_pos+i) = ship_name;
         }
     }
 
-    if(orientation == "V" or "v") {
+    if(orientation == "V" or orientation == "v") {
         for(int i = 0; i < ship_size; ++i) {
             this->boardContents.at(col_pos+i).at(row_pos) = ship_name;
         }
@@ -70,10 +70,10 @@ bool BattleShip::Board::in_bounds_horizontal(int col_pos, int ship_size) const {
 }
 
 bool BattleShip::Board::in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
-    if (orientation_choice == "H" or "h") {
-        in_bounds_horizontal(col_pos, ship_size);
+    if (orientation_choice == "H" or orientation_choice == "h") {
+        return in_bounds_horizontal(col_pos, ship_size);
     }
-    if (orientation_choice == "V" or "v") {
+    if (orientation_choice == "V" or orientation_choice == "v") {
         return in_bounds_vertical(row_pos, ship_size);
     }
 }

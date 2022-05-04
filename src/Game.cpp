@@ -60,7 +60,7 @@ void BattleShip::Game::setup_game() {
                }
             }
 
-            cur_player.get_placement_board().place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
+            cur_player.place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
 
 
 

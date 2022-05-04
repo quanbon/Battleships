@@ -44,4 +44,11 @@ BattleShip::Board BattleShip::Player::get_placement_board() {
     return this->placement_board;
 }
 
+void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation) {
+    this->placement_board.place_ship(row_pos, col_pos, ship_size, ship_name, orientation);
+
+}
+
+
+
 
