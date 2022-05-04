@@ -17,10 +17,12 @@ namespace BattleShip {
         int get_num_cols() const;
         void display_board();
         void place_ship(int col_pos, int row_pos, int ship_size, char ship_name, std::string orientation);
+        bool is_between(int pos);
         bool in_bounds_vertical(int row_pos, int ship_size) const;
         bool in_bounds_horizontal(int col_pos, int ship_size) const;
         bool in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
-//        bool overlap_check();
+        bool overlap_vertical_check(int row_pos, int ship_size, int col_pos);
+        bool overlap_horizontal_check(int row_pos, int col_pos, int ship_size);
 
 
     private:
