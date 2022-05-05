@@ -6,11 +6,37 @@
 #include "Board.h"
 #include "Input_Validation.h"
 #include "file_reader.h"
+#include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 BattleShip::Game::Game() {
 
+}
+
+std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity) {
+    std::vector<char> assorted_container;
+    std::vector<BattleShip::Ships> new_ship_container;
+
+    for (int i = 0; i < ship_quantity; i++) {
+        char ship_name = ship_container.at(i).get_ship_name();
+        assorted_container.push_back(ship_name);
+    }
+
+    std::sort(assorted_container.begin(), assorted_container.end(), [](char& a, char& b) {return tolower(a) < tolower(b); });
+
+    for (int i = 0; i < ship_quantity; i++) {
+        for (int j = 0; j < ship_quantity; j++) {
+            char actual_ship_name = ship_container.at(j).get_ship_name();
+            if (assorted_container.at(i) == actual_ship_name) {
+                new_ship_container.push_back(ship_container.at(j));
+            }
+        }
+    }
+
+
+    return new_ship_container;
 }
 
 void BattleShip::Game::configure_game(std::ifstream& src) {
@@ -30,6 +56,8 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
         BattleShip::Ships new_ship(ship_name, ship_length);
         ship_container.push_back(new_ship);
     }
+
+    ship_container = sort_ships(ship_container, ship_container_size);
     set_player_board_and_ship();
 
 }
@@ -96,6 +124,8 @@ void BattleShip::Game::set_player_board_and_ship() {
         this->players.push_back(std::move(player));
     }
 }
+
+
 
 
 

@@ -17,9 +17,11 @@ void lowerInPlace(std::string& string) {
     }
 }
 
-void lower(std::string& string) {
+std::string lower(std::string& string) {
     lowerInPlace(string);
+    return string;
 }
+
 
 bool is_valid_placement(const std::string& word_to_check) {
     std::string word_check = word_to_check;
