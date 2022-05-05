@@ -98,8 +98,16 @@ void BattleShip::Player::ship_was_miss_on_firing_board(int row_choice, int col_c
 
 }
 
+bool BattleShip::Player::check_for_empty_map() {
+    return this->player_ships.empty();
+}
 
+bool BattleShip::Player::check_for_ship_destroyed(char ship_name) {
+    return this->player_ships[ship_name] = 0;
+}
 
-
+void BattleShip::Player::remove_ship(char ship_name) {
+    this->player_ships.erase(ship_name);
+}
 
 

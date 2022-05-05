@@ -14,6 +14,7 @@ namespace BattleShip {
     public:
         Game();
 
+        std::vector<BattleShip::Ships> sort_ships(std::vector<BattleShip::Ships> ship_container);
         void configure_game(std::ifstream& src);
         void set_player_board_and_ship();
         BattleShip::Player& get_current_player();
@@ -23,6 +24,8 @@ namespace BattleShip {
         void setup_game();
         void play_game();
         void check_for_hit(int row_choice, int col_choice, char& ship_hit);
+        bool is_game_over();
+        bool check_for_ship_destroyed(char ship_name);
 
     private:
         std::vector<std::unique_ptr<Player>> players;

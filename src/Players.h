@@ -30,6 +30,9 @@ namespace BattleShip {
         void ship_was_hit_on_firing_board(int row_choice, int col_choice);
         void ship_was_miss_on_place_board(int row_choice, int col_choice);
         void ship_was_miss_on_firing_board(int row_choice, int col_choice);
+        bool check_for_empty_map();
+        bool check_for_ship_destroyed(char ship_name);
+        void remove_ship(char ship_name);
 
         Board get_placement_board();
 

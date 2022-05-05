@@ -56,7 +56,7 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
         ship_container.push_back(new_ship);
     }
 
-    ship_container = sort_ships(ship_container, ship_container_size);
+    ship_container = ::sort_ships(ship_container, ship_container_size);
 
     set_player_board_and_ship();
 
@@ -94,24 +94,29 @@ void BattleShip::Game::setup_game() {
     }
 }
 
+bool BattleShip::Game::is_game_over () {
+    if (get_opposing_player().check_for_empty_map()) {
+        std::cout << get_current_player().get_name() << " won the game!" << std::endl;
+        return true;
+    } else { return false; }
+}
+
 void BattleShip::Game::play_game() {
     int row_choice, col_choice;
     char ship_hit;
 
 
-    while(true) {
+    while(not is_game_over()) {
 
         get_current_player().display_both_game_boards(get_current_player().get_name());
         get_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
         check_for_hit(row_choice, col_choice, ship_hit);
+        check_for_ship_destroyed(ship_hit);
+        is_game_over();
         change_player_turn();
 
+
     }
-
-
-
-
-
 
 
 }
@@ -165,6 +170,15 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
     }
 
 }
+
+bool BattleShip::Game::check_for_ship_destroyed(char ship_name) {
+    if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
+        get_opposing_player().remove_ship(ship_name);
+        std::cout << get_current_player().get_name() << " destroyed " <<
+        get_opposing_player().get_name() << "'s " << ship_name << std::endl;
+    }
+}
+
 
 
 
