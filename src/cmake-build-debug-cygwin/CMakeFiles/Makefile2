@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /cygdrive/c/Battleships/src/cmake-build-debug-cygwin
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Battleships.dir/all
+all: CMakeFiles/BattleShip.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Battleships.dir/clean
+clean: CMakeFiles/BattleShip.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Battleships.dir
+# Target rules for target CMakeFiles/BattleShip.dir
 
 # All Build rule for target.
-CMakeFiles/Battleships.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Battleships/src/cmake-build-debug-cygwin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Battleships"
-.PHONY : CMakeFiles/Battleships.dir/all
+CMakeFiles/BattleShip.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Battleships/src/cmake-build-debug-cygwin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target BattleShip"
+.PHONY : CMakeFiles/BattleShip.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Battleships.dir/rule: cmake_check_build_system
+CMakeFiles/BattleShip.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Battleships/src/cmake-build-debug-cygwin/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Battleships.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/BattleShip.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Battleships/src/cmake-build-debug-cygwin/CMakeFiles 0
-.PHONY : CMakeFiles/Battleships.dir/rule
+.PHONY : CMakeFiles/BattleShip.dir/rule
 
 # Convenience name for target.
-Battleships: CMakeFiles/Battleships.dir/rule
-.PHONY : Battleships
+BattleShip: CMakeFiles/BattleShip.dir/rule
+.PHONY : BattleShip
 
 # clean rule for target.
-CMakeFiles/Battleships.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/clean
-.PHONY : CMakeFiles/Battleships.dir/clean
+CMakeFiles/BattleShip.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/clean
+.PHONY : CMakeFiles/BattleShip.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -97,6 +97,7 @@ bool BattleShip::Board::in_bounds_check(int row_pos, int col_pos, int ship_size,
     if (orientation_choice == "V" or orientation_choice == "v") {
         return in_bounds_vertical(row_pos, ship_size)  and is_between(col_pos) and overlap_vertical_check(row_pos, col_pos, ship_size);
     }
+    return false;
 }
 
 bool BattleShip::Board::is_between(int pos) {

@@ -25,7 +25,7 @@ namespace BattleShip {
         void play_game();
         void check_for_hit(int row_choice, int col_choice, char& ship_hit);
         bool is_game_over();
-        bool check_for_ship_destroyed(char ship_name);
+        void check_for_ship_destroyed(char ship_name);
 
     private:
         std::vector<std::unique_ptr<Player>> players;

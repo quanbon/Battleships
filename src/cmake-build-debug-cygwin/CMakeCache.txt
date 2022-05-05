@@ -15,6 +15,24 @@
 ########################
 
 //Value Computed by CMake
+BattleShip_BINARY_DIR:STATIC=/cygdrive/c/Battleships/src/cmake-build-debug-cygwin
+
+//Value Computed by CMake
+BattleShip_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+BattleShip_SOURCE_DIR:STATIC=/cygdrive/c/Battleships/src
+
+//Value Computed by CMake
+Battleship_BINARY_DIR:STATIC=/cygdrive/c/Battleships/src/cmake-build-debug-cygwin
+
+//Value Computed by CMake
+Battleship_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Battleship_SOURCE_DIR:STATIC=/cygdrive/c/Battleships/src
+
+//Value Computed by CMake
 Battleships_BINARY_DIR:STATIC=/cygdrive/c/Battleships/src/cmake-build-debug-cygwin
 
 //Value Computed by CMake
@@ -165,7 +183,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Battleships
+CMAKE_PROJECT_NAME:STATIC=BattleShip
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib.exe

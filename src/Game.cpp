@@ -172,7 +172,7 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
 
 }
 
-bool BattleShip::Game::check_for_ship_destroyed(char ship_name) {
+void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<

@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Battleships
+# Target rules for targets named BattleShip
 
 # Build rule for target.
-Battleships: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Battleships
-.PHONY : Battleships
+BattleShip: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BattleShip
+.PHONY : BattleShip
 
 # fast build rule for target.
-Battleships/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/build
-.PHONY : Battleships/fast
+BattleShip/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/build
+.PHONY : BattleShip/fast
 
 Board.o: Board.cpp.o
 .PHONY : Board.o
 
 # target to build an object file
 Board.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Board.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Board.cpp.o
 .PHONY : Board.cpp.o
 
 Board.i: Board.cpp.i
@@ -142,7 +142,7 @@ Board.i: Board.cpp.i
 
 # target to preprocess a source file
 Board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Board.cpp.i
 .PHONY : Board.cpp.i
 
 Board.s: Board.cpp.s
@@ -150,7 +150,7 @@ Board.s: Board.cpp.s
 
 # target to generate assembly for a file
 Board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
 Game.o: Game.cpp.o
@@ -158,7 +158,7 @@ Game.o: Game.cpp.o
 
 # target to build an object file
 Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Game.cpp.o
 .PHONY : Game.cpp.o
 
 Game.i: Game.cpp.i
@@ -166,7 +166,7 @@ Game.i: Game.cpp.i
 
 # target to preprocess a source file
 Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -174,7 +174,7 @@ Game.s: Game.cpp.s
 
 # target to generate assembly for a file
 Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 Input_Validation.o: Input_Validation.cpp.o
@@ -182,7 +182,7 @@ Input_Validation.o: Input_Validation.cpp.o
 
 # target to build an object file
 Input_Validation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Input_Validation.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Input_Validation.cpp.o
 .PHONY : Input_Validation.cpp.o
 
 Input_Validation.i: Input_Validation.cpp.i
@@ -190,7 +190,7 @@ Input_Validation.i: Input_Validation.cpp.i
 
 # target to preprocess a source file
 Input_Validation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Input_Validation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Input_Validation.cpp.i
 .PHONY : Input_Validation.cpp.i
 
 Input_Validation.s: Input_Validation.cpp.s
@@ -198,7 +198,7 @@ Input_Validation.s: Input_Validation.cpp.s
 
 # target to generate assembly for a file
 Input_Validation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Input_Validation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Input_Validation.cpp.s
 .PHONY : Input_Validation.cpp.s
 
 Move.o: Move.cpp.o
@@ -206,7 +206,7 @@ Move.o: Move.cpp.o
 
 # target to build an object file
 Move.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Move.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.o
 .PHONY : Move.cpp.o
 
 Move.i: Move.cpp.i
@@ -214,7 +214,7 @@ Move.i: Move.cpp.i
 
 # target to preprocess a source file
 Move.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Move.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.i
 .PHONY : Move.cpp.i
 
 Move.s: Move.cpp.s
@@ -222,7 +222,7 @@ Move.s: Move.cpp.s
 
 # target to generate assembly for a file
 Move.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Move.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.s
 .PHONY : Move.cpp.s
 
 Players.o: Players.cpp.o
@@ -230,7 +230,7 @@ Players.o: Players.cpp.o
 
 # target to build an object file
 Players.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Players.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Players.cpp.o
 .PHONY : Players.cpp.o
 
 Players.i: Players.cpp.i
@@ -238,7 +238,7 @@ Players.i: Players.cpp.i
 
 # target to preprocess a source file
 Players.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Players.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Players.cpp.i
 .PHONY : Players.cpp.i
 
 Players.s: Players.cpp.s
@@ -246,7 +246,7 @@ Players.s: Players.cpp.s
 
 # target to generate assembly for a file
 Players.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Players.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Players.cpp.s
 .PHONY : Players.cpp.s
 
 Ships.o: Ships.cpp.o
@@ -254,7 +254,7 @@ Ships.o: Ships.cpp.o
 
 # target to build an object file
 Ships.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Ships.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Ships.cpp.o
 .PHONY : Ships.cpp.o
 
 Ships.i: Ships.cpp.i
@@ -262,7 +262,7 @@ Ships.i: Ships.cpp.i
 
 # target to preprocess a source file
 Ships.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Ships.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Ships.cpp.i
 .PHONY : Ships.cpp.i
 
 Ships.s: Ships.cpp.s
@@ -270,7 +270,7 @@ Ships.s: Ships.cpp.s
 
 # target to generate assembly for a file
 Ships.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/Ships.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Ships.cpp.s
 .PHONY : Ships.cpp.s
 
 file_reader.o: file_reader.cpp.o
@@ -278,7 +278,7 @@ file_reader.o: file_reader.cpp.o
 
 # target to build an object file
 file_reader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/file_reader.cpp.o
 .PHONY : file_reader.cpp.o
 
 file_reader.i: file_reader.cpp.i
@@ -286,7 +286,7 @@ file_reader.i: file_reader.cpp.i
 
 # target to preprocess a source file
 file_reader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/file_reader.cpp.i
 .PHONY : file_reader.cpp.i
 
 file_reader.s: file_reader.cpp.s
@@ -294,7 +294,7 @@ file_reader.s: file_reader.cpp.s
 
 # target to generate assembly for a file
 file_reader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/file_reader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/file_reader.cpp.s
 .PHONY : file_reader.cpp.s
 
 main.o: main.cpp.o
@@ -302,7 +302,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -310,7 +310,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -318,7 +318,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battleships.dir/build.make CMakeFiles/Battleships.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -329,7 +329,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Battleships"
+	@echo "... BattleShip"
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
