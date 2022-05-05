@@ -4,6 +4,7 @@
 
 #include "Players.h"
 #include "Input_Validation.h"
+#include <iostream>
 
 
 BattleShip::Player::Player() {
@@ -35,6 +36,22 @@ void BattleShip::Player::display_placement_board() {
 
 }
 
+void BattleShip::Player::display_firing_board() {
+    this->firing_board.display_board();
+
+}
+
+void BattleShip::Player::display_both_game_boards(std::string player_name) {
+    std::cout << player_name << "'s Firing Board" << std::endl;
+    this->firing_board.display_board();
+
+    std::cout << "\n\n";
+    std::cout << player_name << "'s Placement Board" << std::endl;
+    this->placement_board.display_board();
+
+}
+
+
 std::string BattleShip::Player::get_name() {
     return this->name;
 
@@ -52,6 +69,8 @@ void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, cha
 bool BattleShip::Player::valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
     return this->placement_board.in_bounds_check(row_pos, col_pos, ship_size, orientation_choice);
 }
+
+
 
 
 

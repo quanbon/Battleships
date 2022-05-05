@@ -66,6 +66,12 @@ void BattleShip::Game::setup_game() {
     }
 }
 
+void BattleShip::Game::play_game() {
+    Player& cur_player = get_current_player();
+    cur_player.display_both_game_boards(cur_player.get_name());
+
+}
+
 BattleShip::Player& BattleShip::Game::get_current_player() {
     return *this->players.at(playerTurn);
 }
