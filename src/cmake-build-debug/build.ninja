@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Battleships
+# Project: BattleShip
 # Configurations: Debug
 # =============================================================================
 
@@ -64,77 +64,77 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Battleships
+# Object build statements for EXECUTABLE target BattleShip
 
 
 #############################################
-# Order-only phony target for Battleships
+# Order-only phony target for BattleShip
 
-build cmake_object_order_depends_target_Battleships: phony || CMakeFiles/Battleships.dir
+build cmake_object_order_depends_target_BattleShip: phony || CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/main.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/main.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/main.cpp.o.d
+build CMakeFiles/BattleShip.dir/main.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/main.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Players.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Players.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Players.cpp.o.d
+build CMakeFiles/BattleShip.dir/Players.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Players.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Players.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Game.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Game.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Game.cpp.o.d
+build CMakeFiles/BattleShip.dir/Game.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Game.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Game.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Ships.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Ships.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Ships.cpp.o.d
+build CMakeFiles/BattleShip.dir/Ships.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Ships.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Ships.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Board.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Board.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Board.cpp.o.d
+build CMakeFiles/BattleShip.dir/Board.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Board.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Board.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Move.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Move.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Move.cpp.o.d
+build CMakeFiles/BattleShip.dir/Move.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Move.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Move.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/Input_Validation.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Input_Validation.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/Input_Validation.cpp.o.d
+build CMakeFiles/BattleShip.dir/Input_Validation.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/Input_Validation.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/Input_Validation.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
-build CMakeFiles/Battleships.dir/file_reader.cpp.o: CXX_COMPILER__Battleships_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/file_reader.cpp || cmake_object_order_depends_target_Battleships
-  DEP_FILE = CMakeFiles/Battleships.dir/file_reader.cpp.o.d
+build CMakeFiles/BattleShip.dir/file_reader.cpp.o: CXX_COMPILER__BattleShip_Debug /Users/quannguyen/Desktop/ECS$ 36B$ HW/Battleships/src/file_reader.cpp || cmake_object_order_depends_target_BattleShip
+  DEP_FILE = CMakeFiles/BattleShip.dir/file_reader.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5 -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Battleships.dir
-  OBJECT_FILE_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
+  OBJECT_FILE_DIR = CMakeFiles/BattleShip.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Battleships
+# Link build statements for EXECUTABLE target BattleShip
 
 
 #############################################
-# Link the executable Battleships
+# Link the executable BattleShip
 
-build Battleships: CXX_EXECUTABLE_LINKER__Battleships_Debug CMakeFiles/Battleships.dir/main.cpp.o CMakeFiles/Battleships.dir/Players.cpp.o CMakeFiles/Battleships.dir/Game.cpp.o CMakeFiles/Battleships.dir/Ships.cpp.o CMakeFiles/Battleships.dir/Board.cpp.o CMakeFiles/Battleships.dir/Move.cpp.o CMakeFiles/Battleships.dir/Input_Validation.cpp.o CMakeFiles/Battleships.dir/file_reader.cpp.o
+build BattleShip: CXX_EXECUTABLE_LINKER__BattleShip_Debug CMakeFiles/BattleShip.dir/main.cpp.o CMakeFiles/BattleShip.dir/Players.cpp.o CMakeFiles/BattleShip.dir/Game.cpp.o CMakeFiles/BattleShip.dir/Ships.cpp.o CMakeFiles/BattleShip.dir/Board.cpp.o CMakeFiles/BattleShip.dir/Move.cpp.o CMakeFiles/BattleShip.dir/Input_Validation.cpp.o CMakeFiles/BattleShip.dir/file_reader.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.5
-  OBJECT_DIR = CMakeFiles/Battleships.dir
+  OBJECT_DIR = CMakeFiles/BattleShip.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Battleships
-  TARGET_PDB = Battleships.dbg
+  TARGET_FILE = BattleShip
+  TARGET_PDB = BattleShip.dbg
 
 # =============================================================================
 # Target aliases.
@@ -147,7 +147,7 @@ build Battleships: CXX_EXECUTABLE_LINKER__Battleships_Debug CMakeFiles/Battleshi
 #############################################
 # Folder: /Users/quannguyen/Desktop/ECS 36B HW/Battleships/src/cmake-build-debug
 
-build all: phony Battleships
+build all: phony BattleShip
 
 # =============================================================================
 # Built-in targets

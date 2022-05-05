@@ -7,6 +7,7 @@
 #include "Input_Validation.h"
 #include "file_reader.h"
 #include <algorithm>
+#include <sstream>
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -102,14 +103,16 @@ bool BattleShip::Game::is_game_over () {
 }
 
 void BattleShip::Game::play_game() {
-    int row_choice, col_choice;
-    char ship_hit;
 
 
-    while(not is_game_over()) {
+
+    while(!is_game_over()) {
+        int row_choice, col_choice;
+        char ship_hit;
 
         get_current_player().display_both_game_boards(get_current_player().get_name());
         get_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
+
         check_for_hit(row_choice, col_choice, ship_hit);
         check_for_ship_destroyed(ship_hit);
         if (is_game_over()) {
@@ -162,11 +165,15 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
 
         std::string cur_player = get_current_player().get_name();
         std::string opp_player = get_opposing_player().get_name();
+        get_current_player().display_both_game_boards(get_current_player().get_name());
         std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
+        std::cout<< std::endl;
     } else {
         get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
         get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
+        get_current_player().display_both_game_boards(get_current_player().get_name());
         std::cout<< "Missed" << std::endl;
+        std::cout<< std::endl;
 
     }
 
@@ -179,6 +186,28 @@ void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
         get_opposing_player().get_name() << "'s " << ship_name << std::endl;
     }
 }
+
+void BattleShip::Game::get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
+    std::string line;
+    while (true) {
+        std::cout << player_name << ", where would you like to fire?" << std::endl;
+        std::cout<< "Enter your attack in the coordinate in form row col: ";
+        std::getline(std::cin, line); //grabs the entire line
+        std::stringstream line2parse(line);
+        line2parse >> num1 >> num2;
+        if (line2parse and is_between(num1, num2, row_size, col_size)) { //if I was able to read the number
+            std::string what_is_left;
+            line2parse >> what_is_left;
+
+
+            if (not line2parse) {//if there is nothing left we will fail to read i
+                get_current_player().display_both_game_boards(get_current_player().get_name());
+                return;
+            }
+        }
+    }
+}
+
 
 
 
