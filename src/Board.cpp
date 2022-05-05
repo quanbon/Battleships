@@ -104,7 +104,9 @@ bool BattleShip::Board::is_between(int pos) {
 }
 
 bool BattleShip::Board::check_for_hit(int row_choice, int col_choice, char& ship_name) {
-    if(this->boardContents.at(row_choice).at(col_choice) == '*') {
+    if(this->boardContents.at(row_choice).at(col_choice) == '*' or
+       this->boardContents.at(row_choice).at(col_choice) == 'X' or
+       this->boardContents.at(row_choice).at(col_choice) == 'O' ) {
         return false;
     } else {
         ship_name = this->boardContents.at(row_choice).at(col_choice);

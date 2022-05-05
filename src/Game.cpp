@@ -96,7 +96,7 @@ void BattleShip::Game::setup_game() {
 
 bool BattleShip::Game::is_game_over () {
     if (get_opposing_player().check_for_empty_map()) {
-        std::cout << get_current_player().get_name() << " won the game!" << std::endl;
+        std::cout << "\n" << get_current_player().get_name() << " won the game!" << std::endl;
         return true;
     } else { return false; }
 }
@@ -112,9 +112,10 @@ void BattleShip::Game::play_game() {
         get_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
         check_for_hit(row_choice, col_choice, ship_hit);
         check_for_ship_destroyed(ship_hit);
-        is_game_over();
+        if (is_game_over()) {
+            break;
+        }
         change_player_turn();
-
 
     }
 
