@@ -103,7 +103,10 @@ bool BattleShip::Player::check_for_empty_map() {
 }
 
 bool BattleShip::Player::check_for_ship_destroyed(char ship_name) {
-    return this->player_ships[ship_name] = 0;
+    if (this->player_ships[ship_name] == 0) {
+        return true;
+    }
+    // return this->player_ships[ship_name] = 0;
 }
 
 void BattleShip::Player::remove_ship(char ship_name) {
