@@ -27,6 +27,7 @@ namespace BattleShip {
         bool is_game_over();
         void check_for_ship_destroyed(char ship_name);
         void get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
+        void check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
 
     private:
         std::vector<std::unique_ptr<Player>> players;

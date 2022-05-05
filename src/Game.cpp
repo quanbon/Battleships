@@ -111,7 +111,7 @@ void BattleShip::Game::play_game() {
         char ship_hit;
 
         get_current_player().display_both_game_boards(get_current_player().get_name());
-        get_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
+        check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
 
         check_for_hit(row_choice, col_choice, ship_hit);
         check_for_ship_destroyed(ship_hit);
@@ -195,18 +195,30 @@ void BattleShip::Game::get_firing_pos(std::string player_name, int& num1, int& n
         std::getline(std::cin, line); //grabs the entire line
         std::stringstream line2parse(line);
         line2parse >> num1 >> num2;
-        if (line2parse and is_between(num1, num2, row_size, col_size)) { //if I was able to read the number
+        if (line2parse) { //if I was able to read the number
             std::string what_is_left;
             line2parse >> what_is_left;
 
 
             if (not line2parse) {//if there is nothing left we will fail to read i
-                get_current_player().display_both_game_boards(get_current_player().get_name());
                 return;
             }
         }
     }
 }
+
+void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
+    while(true) {
+        get_firing_pos(player_name, num1, num2, row_size, col_size);
+        if(!is_between(num1, num2, row_size, col_size)) {
+            get_current_player().display_both_game_boards(get_current_player().get_name());
+            continue;
+        } else {
+            break;
+        }
+    }
+}
+
 
 
 
