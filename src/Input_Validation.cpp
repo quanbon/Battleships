@@ -67,7 +67,7 @@ void get_two_ints(std::string player_name, char ship_name, int ship_size, int& n
         if (line2parse) { //if I was able to read the number
             std::string what_is_left;
             line2parse >> what_is_left;
-            if (not line2parse) { //if there is nothing left we will fail to read it
+            if (not line2parse ) { //if there is nothing left we will fail to read it
                 return;
             }
         }

@@ -49,6 +49,10 @@ void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, cha
 
 }
 
+bool BattleShip::Player::valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
+    return this->placement_board.in_bounds_check(row_pos, col_pos, ship_size, orientation_choice);
+}
+
 
 
 
