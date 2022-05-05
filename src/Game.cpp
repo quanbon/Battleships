@@ -34,8 +34,6 @@ std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_c
             }
         }
     }
-
-
     return new_ship_container;
 }
 
@@ -53,11 +51,13 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
         src >> ship_name;
         src >> ship_length;
 
+        ship_map[ship_name] = ship_length;
         BattleShip::Ships new_ship(ship_name, ship_length);
         ship_container.push_back(new_ship);
     }
 
     ship_container = sort_ships(ship_container, ship_container_size);
+
     set_player_board_and_ship();
 
 }
@@ -95,13 +95,37 @@ void BattleShip::Game::setup_game() {
 }
 
 void BattleShip::Game::play_game() {
-    Player& cur_player = get_current_player();
-    cur_player.display_both_game_boards(cur_player.get_name());
+    int row_choice, col_choice;
+    char ship_hit;
+
+
+    while(true) {
+
+        get_current_player().display_both_game_boards(get_current_player().get_name());
+        get_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
+        check_for_hit(row_choice, col_choice, ship_hit);
+        change_player_turn();
+
+    }
+
+
+
+
+
+
 
 }
 
 BattleShip::Player& BattleShip::Game::get_current_player() {
     return *this->players.at(playerTurn);
+}
+
+BattleShip::Player &BattleShip::Game::get_opposing_player() {
+    if(playerTurn == 0) {
+        return *players.back();
+    } else {
+        return *players.front();
+    }
 }
 
 void BattleShip::Game::change_player_turn() {
@@ -118,10 +142,32 @@ void BattleShip::Game::set_player_board_and_ship() {
         std::unique_ptr<Player> player = std::make_unique<Player>();
         //player->set_name("Some name");
         player->set_board(this->board_num_row, this->board_num_row);
-        player->set_ships(this->ship_container);
+        player->set_ships(this->ship_map);
         this->players.push_back(std::move(player));
     }
 }
+
+
+void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_hit) {
+    if(get_opposing_player().check_for_hit(row_choice, col_choice, ship_hit)) {
+        get_opposing_player().decrement_ship(ship_hit);
+        get_opposing_player().ship_was_hit_on_place_board(row_choice, col_choice);
+        get_current_player().ship_was_hit_on_firing_board(row_choice, col_choice);
+
+        std::string cur_player = get_current_player().get_name();
+        std::string opp_player = get_opposing_player().get_name();
+        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
+    } else {
+        get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
+        get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
+        std::cout<< "Missed" << std::endl;
+
+    }
+
+}
+
+
+
 
 
 

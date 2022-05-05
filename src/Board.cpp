@@ -103,6 +103,24 @@ bool BattleShip::Board::is_between(int pos) {
     return pos > -1 and pos <= this->num_row;
 }
 
+bool BattleShip::Board::check_for_hit(int row_choice, int col_choice, char& ship_name) {
+    if(this->boardContents.at(row_choice).at(col_choice) == '*') {
+        return false;
+    } else {
+        ship_name = this->boardContents.at(row_choice).at(col_choice);
+    }
+    return true;
+}
+
+void BattleShip::Board::ship_was_hit(int row_choice, int col_choice) {
+    this->boardContents.at(row_choice).at(col_choice) = 'X';
+
+}
+
+void BattleShip::Board::ship_was_missed(int row_choice, int col_choice) {
+    this->boardContents.at(row_choice).at(col_choice) = 'O';
+
+}
 
 
 

@@ -23,6 +23,9 @@ namespace BattleShip {
         bool in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
         bool overlap_vertical_check(int row_pos, int col_pos, int ship_size);
         bool overlap_horizontal_check(int row_pos, int col_pos, int ship_size);
+        bool check_for_hit(int row_choice, int col_choice, char& ship_name);
+        void ship_was_hit(int row_choice, int col_choice);
+        void ship_was_missed(int row_choice, int col_choice);
 
 
     private:

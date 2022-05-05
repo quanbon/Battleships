@@ -26,8 +26,8 @@ void BattleShip::Player::set_board(int row, int col) {
 
 }
 
-void BattleShip::Player::set_ships(std::vector<BattleShip::Ships>& ship_vector) {
-    this->player_ships = ship_vector;
+void BattleShip::Player::set_ships(std::map<char, int >& ship_map) {
+    this->player_ships = ship_map;
 
 }
 
@@ -68,6 +68,34 @@ void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, cha
 
 bool BattleShip::Player::valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
     return this->placement_board.in_bounds_check(row_pos, col_pos, ship_size, orientation_choice);
+}
+
+bool BattleShip::Player::check_for_hit(int row_choice, int col_choice, char& ship_name) {
+    return this->placement_board.check_for_hit(row_choice, col_choice, ship_name);
+}
+
+void BattleShip::Player::decrement_ship(char ship_name) {
+    this->player_ships[ship_name]--;
+
+}
+
+void BattleShip::Player::ship_was_hit_on_place_board(int row_choice, int col_choice) {
+    this->placement_board.ship_was_hit(row_choice, col_choice);
+
+}
+
+void BattleShip::Player::ship_was_hit_on_firing_board(int row_choice, int col_choice) {
+    this->firing_board.ship_was_hit(row_choice, col_choice);
+
+}
+
+void BattleShip::Player::ship_was_miss_on_place_board(int row_choice, int col_choice) {
+    this->placement_board.ship_was_missed(row_choice, col_choice);
+}
+
+void BattleShip::Player::ship_was_miss_on_firing_board(int row_choice, int col_choice) {
+    this->firing_board.ship_was_missed(row_choice, col_choice);
+
 }
 
 
