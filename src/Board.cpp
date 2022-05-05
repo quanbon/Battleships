@@ -70,7 +70,7 @@ bool BattleShip::Board::in_bounds_horizontal(int col_pos, int ship_size) const {
 }
 
 
-bool BattleShip::Board::overlap_vertical_check(int row_pos, int ship_size, int col_pos) {
+bool BattleShip::Board::overlap_vertical_check(int row_pos, int col_pos, int ship_size) {
     for(int i = 0; i < ship_size; ++i) {
         if(this->boardContents.at(row_pos+i).at(col_pos) != '*') {
             return false;
@@ -92,10 +92,10 @@ bool BattleShip::Board::overlap_horizontal_check(int row_pos, int col_pos, int s
 
 bool BattleShip::Board::in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
     if (orientation_choice == "H" or orientation_choice == "h") {
-        return in_bounds_horizontal(col_pos, ship_size) and overlap_horizontal_check(row_pos, col_pos, ship_size) and is_between(row_pos);
+        return in_bounds_horizontal(col_pos, ship_size)  and is_between(row_pos) and overlap_horizontal_check(row_pos, col_pos, ship_size);
     }
     if (orientation_choice == "V" or orientation_choice == "v") {
-        return in_bounds_vertical(row_pos, ship_size) and overlap_vertical_check(row_pos, col_pos, ship_size) and is_between(col_pos);
+        return in_bounds_vertical(row_pos, ship_size)  and is_between(col_pos) and overlap_vertical_check(row_pos, col_pos, ship_size);
     }
 }
 

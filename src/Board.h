@@ -21,7 +21,7 @@ namespace BattleShip {
         bool in_bounds_vertical(int row_pos, int ship_size) const;
         bool in_bounds_horizontal(int col_pos, int ship_size) const;
         bool in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
-        bool overlap_vertical_check(int row_pos, int ship_size, int col_pos);
+        bool overlap_vertical_check(int row_pos, int col_pos, int ship_size);
         bool overlap_horizontal_check(int row_pos, int col_pos, int ship_size);
 
 
