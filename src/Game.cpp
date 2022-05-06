@@ -97,6 +97,7 @@ void BattleShip::Game::setup_game() {
 
 bool BattleShip::Game::is_game_over () {
     if (get_opposing_player().check_for_empty_map()) {
+        std::cout << std::endl;
         std::cout << "\n" << get_current_player().get_name() << " won the game!" << std::endl;
         return true;
     } else { return false; }
@@ -166,7 +167,7 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
         std::string cur_player = get_current_player().get_name();
         std::string opp_player = get_opposing_player().get_name();
         get_current_player().display_both_game_boards(get_current_player().get_name());
-        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
+        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!";
         std::cout<< std::endl;
     } else {
         get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
@@ -183,7 +184,7 @@ void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<
-        get_opposing_player().get_name() << "'s " << ship_name << std::endl;
+        get_opposing_player().get_name() << "'s " << ship_name;
     }
 }
 
