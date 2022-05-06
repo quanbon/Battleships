@@ -40,8 +40,8 @@ std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_c
 
 void BattleShip::Game::configure_game(std::ifstream& src) {
     int ship_container_size;
-    src >> this->board_num_col;
     src >> this->board_num_row;
+    src >> this->board_num_col;
     src >> ship_container_size;
 
     this->playerTurn = 0;
@@ -98,7 +98,7 @@ void BattleShip::Game::setup_game() {
 bool BattleShip::Game::is_game_over () {
     if (get_opposing_player().check_for_empty_map()) {
         std::cout << std::endl;
-        std::cout << "\n" << get_current_player().get_name() << " won the game!" << std::endl;
+        std::cout << get_current_player().get_name() << " won the game!" << std::endl;
         return true;
     } else { return false; }
 }
@@ -152,7 +152,7 @@ void BattleShip::Game::set_player_board_and_ship() {
     for(int i = 0; i < num_players; ++i) {
         std::unique_ptr<Player> player = std::make_unique<Player>();
         //player->set_name("Some name");
-        player->set_board(this->board_num_row, this->board_num_row);
+        player->set_board(this->board_num_row, this->board_num_col);
         player->set_ships(this->ship_map);
         this->players.push_back(std::move(player));
     }
@@ -184,7 +184,7 @@ void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<
-        get_opposing_player().get_name() << "'s " << ship_name << "!";
+        get_opposing_player().get_name() << "'s " << ship_name << "!" << std::endl;
     }
 }
 
