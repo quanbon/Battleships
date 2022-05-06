@@ -113,13 +113,11 @@ void BattleShip::Game::play_game() {
 
         get_current_player().display_both_game_boards(get_current_player().get_name());
         check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
-
         check_for_hit(row_choice, col_choice, ship_hit);
-        check_for_ship_destroyed(ship_hit);
+        //check_for_ship_destroyed(ship_hit);
         if (is_game_over()) {
             break;
         }
-        std::cout << std::endl;
         change_player_turn();
 
     }
@@ -168,8 +166,8 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
         std::string cur_player = get_current_player().get_name();
         std::string opp_player = get_opposing_player().get_name();
         get_current_player().display_both_game_boards(get_current_player().get_name());
-        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!";
-        std::cout<< std::endl;
+        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
+        check_for_ship_destroyed(ship_hit);
     } else {
         get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
         get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
@@ -180,7 +178,7 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
 
 }
 
-void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
+void BattleShip::Game::check_for_ship_destroyed(char& ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<
