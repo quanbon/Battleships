@@ -174,7 +174,7 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
         get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
         get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
         get_current_player().display_both_game_boards(get_current_player().get_name());
-        std::cout<< "Missed" << std::endl;
+        std::cout<< "Missed." << std::endl;
 
     }
 
@@ -184,7 +184,7 @@ void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<
-        get_opposing_player().get_name() << "'s " << ship_name;
+        get_opposing_player().get_name() << "'s!" << ship_name;
     }
 }
 
@@ -192,7 +192,7 @@ void BattleShip::Game::get_firing_pos(std::string player_name, int& num1, int& n
     std::string line;
     while (true) {
         std::cout << player_name << ", where would you like to fire?" << std::endl;
-        std::cout<< "Enter your attack in the coordinate in form row col: ";
+        std::cout<< "Enter your attack coordinate the form row col: ";
         std::getline(std::cin, line); //grabs the entire line
         std::stringstream line2parse(line);
         line2parse >> num1 >> num2;

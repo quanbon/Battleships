@@ -147,5 +147,3 @@ bool BattleShip::Board::check_for_blank_char(int row_choice, int col_choice) {
 
 
 
-
-

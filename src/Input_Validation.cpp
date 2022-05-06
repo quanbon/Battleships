@@ -58,7 +58,7 @@ void get_two_ints(std::string player_name, char ship_name, int ship_size, int& n
     std::string line;
     while (true) {
         std::cout << player_name << ", enter the row and column you want to place " << ship_name << " which is " << ship_size;
-        std::cout << " long, at with a space in between row and col: ";
+        std::cout << ", long, at with a space in between row and col: ";
         std::getline(std::cin, line); //grabs the entire line
         std::stringstream line2parse(line);
         line2parse >> num1 >> num2;

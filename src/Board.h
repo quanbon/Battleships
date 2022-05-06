@@ -28,7 +28,6 @@ namespace BattleShip {
         void ship_was_missed(int row_choice, int col_choice);
         bool check_for_blank_char(int row_choice, int col_choice);
 
-
     private:
         //Code from Google Drive
         std::vector<std::string> boardContents;
