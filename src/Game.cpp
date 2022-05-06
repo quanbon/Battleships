@@ -192,7 +192,7 @@ void BattleShip::Game::get_firing_pos(std::string player_name, int& num1, int& n
     std::string line;
     while (true) {
         std::cout << player_name << ", where would you like to fire?" << std::endl;
-        std::cout<< "Enter your attack coordinate the form row col: ";
+        std::cout<< "Enter your attack coordinate in the form row col: ";
         std::getline(std::cin, line); //grabs the entire line
         std::stringstream line2parse(line);
         line2parse >> num1 >> num2;
