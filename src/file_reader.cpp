@@ -10,7 +10,7 @@
 
 
 
-void read_config_file (std::ifstream& src, int& num_rows, int& num_cols, std::vector<BattleShip::Ships>& ship_container) {
+void BattleShip::read_config_file (std::ifstream& src, int& num_rows, int& num_cols, std::vector<BattleShip::Ships>& ship_container) {
     int ship_container_size;
     src >> num_rows;
     src >> num_cols;

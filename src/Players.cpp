@@ -11,9 +11,6 @@ BattleShip::Player::Player() {
 
 
 }
-
-
-
 void BattleShip::Player::set_name(int player_num) {
     this->name = get_player_name(player_num);
 

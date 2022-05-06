@@ -7,15 +7,18 @@
 
 #include <string>
 
+namespace BattleShip {
+    std::string get_player_name(int player_num);
+    void get_ship_direction_choice(std::string player_name, char ship_name, std::string& ship_orientation);
+    void get_two_ints(std::string player_name, char ship_name, int ship_size, int& num1, int& num2);
+    bool is_between(int num1, int num2, int row_size, int col_size);
+    bool is_valid_placement(const std::string& word_to_check);
+    std::string lower(std::string& string);
+    void lowerInPlace(std::string& string);
+    void get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
 
-void get_coords_for_ship_placement(int& num_rows, int& num_cols, std::string player_name, char ship_name,
-                                       int ship_length);
+}
 
-std::string get_player_name(int player_num);
 
-void get_ship_direction_choice(std::string player_name, char ship_name, std::string& ship_orientation);
-void get_two_ints(std::string player_name, char ship_name, int ship_size, int& num1, int& num2);
-bool is_between(int num1, int num2, int row_size, int col_size);
-void get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
 
 #endif //BATTLESHIPS_INPUT_VALIDATION_H

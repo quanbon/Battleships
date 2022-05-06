@@ -13,7 +13,6 @@
 #include <vector>
 
 BattleShip::Game::Game() {
-
 }
 
 std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity) {
@@ -38,6 +37,8 @@ std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_c
     return new_ship_container;
 }
 
+
+
 void BattleShip::Game::configure_game(std::ifstream& src) {
     int ship_container_size;
     src >> this->board_num_row;
@@ -60,10 +61,7 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
     ship_container = ::sort_ships(ship_container, ship_container_size);
 
     set_player_board_and_ship();
-
 }
-
-
 
 void BattleShip::Game::setup_game() {
     for(int i = 0; i < 2; ++i) {
@@ -104,9 +102,6 @@ bool BattleShip::Game::is_game_over () {
 }
 
 void BattleShip::Game::play_game() {
-
-
-
     while(!is_game_over()) {
         int row_choice, col_choice;
         char ship_hit;
@@ -114,15 +109,11 @@ void BattleShip::Game::play_game() {
         get_current_player().display_both_game_boards(get_current_player().get_name());
         check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
         check_for_hit(row_choice, col_choice, ship_hit);
-        //check_for_ship_destroyed(ship_hit);
         if (is_game_over()) {
             break;
         }
         change_player_turn();
-
     }
-
-
 }
 
 BattleShip::Player& BattleShip::Game::get_current_player() {
@@ -173,7 +164,6 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
         get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
         get_current_player().display_both_game_boards(get_current_player().get_name());
         std::cout<< "Missed." << std::endl;
-
     }
 
 }
@@ -220,15 +210,3 @@ void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int&
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -99,7 +99,7 @@ bool BattleShip::Board::in_bounds_check(int row_pos, int col_pos, int ship_size,
     }
     return false;
 }
-
+// this could bug out
 bool BattleShip::Board::is_between(int pos) {
     return pos > -1 and pos <= this->num_row;
 }
