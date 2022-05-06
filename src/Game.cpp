@@ -184,7 +184,7 @@ void BattleShip::Game::check_for_ship_destroyed(char ship_name) {
     if (get_opposing_player().check_for_ship_destroyed(ship_name)) {
         get_opposing_player().remove_ship(ship_name);
         std::cout << get_current_player().get_name() << " destroyed " <<
-        get_opposing_player().get_name() << "'s!" << ship_name;
+        get_opposing_player().get_name() << "'s " << ship_name << "!";
     }
 }
 
