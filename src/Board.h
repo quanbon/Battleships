@@ -26,6 +26,7 @@ namespace BattleShip {
         bool check_for_hit(int row_choice, int col_choice, char& ship_name);
         void ship_was_hit(int row_choice, int col_choice);
         void ship_was_missed(int row_choice, int col_choice);
+        bool check_for_blank_char(int row_choice, int col_choice);
 
 
     private:

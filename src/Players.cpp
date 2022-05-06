@@ -113,4 +113,11 @@ void BattleShip::Player::remove_ship(char ship_name) {
     this->player_ships.erase(ship_name);
 }
 
+bool BattleShip::Player::check_for_blank_char(int row_choice, int col_choice) {
+    if(this->firing_board.check_for_blank_char(row_choice, col_choice)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 

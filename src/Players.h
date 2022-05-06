@@ -33,6 +33,7 @@ namespace BattleShip {
         bool check_for_empty_map();
         bool check_for_ship_destroyed(char ship_name);
         void remove_ship(char ship_name);
+        bool check_for_blank_char(int row_choice, int col_choice);
 
         Board get_placement_board();
 

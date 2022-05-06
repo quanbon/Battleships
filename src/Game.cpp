@@ -119,6 +119,7 @@ void BattleShip::Game::play_game() {
         if (is_game_over()) {
             break;
         }
+        std::cout << std::endl;
         change_player_turn();
 
     }
@@ -174,7 +175,6 @@ void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_
         get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
         get_current_player().display_both_game_boards(get_current_player().get_name());
         std::cout<< "Missed" << std::endl;
-        std::cout<< std::endl;
 
     }
 
@@ -212,6 +212,9 @@ void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int&
     while(true) {
         get_firing_pos(player_name, num1, num2, row_size, col_size);
         if(!is_between(num1, num2, row_size, col_size)) {
+            get_current_player().display_both_game_boards(get_current_player().get_name());
+            continue;
+        } else if(!get_current_player().check_for_blank_char(num1, num2)) {
             get_current_player().display_both_game_boards(get_current_player().get_name());
             continue;
         } else {

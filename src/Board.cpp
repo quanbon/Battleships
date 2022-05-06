@@ -125,6 +125,19 @@ void BattleShip::Board::ship_was_missed(int row_choice, int col_choice) {
 
 }
 
+bool BattleShip::Board::check_for_blank_char(int row_choice, int col_choice) {
+    if(this->boardContents.at(row_choice).at(col_choice) == '*') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+
+
+
 
 
 
