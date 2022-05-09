@@ -201,30 +201,6 @@ Input_Validation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Input_Validation.cpp.s
 .PHONY : Input_Validation.cpp.s
 
-Move.o: Move.cpp.o
-.PHONY : Move.o
-
-# target to build an object file
-Move.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.o
-.PHONY : Move.cpp.o
-
-Move.i: Move.cpp.i
-.PHONY : Move.i
-
-# target to preprocess a source file
-Move.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.i
-.PHONY : Move.cpp.i
-
-Move.s: Move.cpp.s
-.PHONY : Move.s
-
-# target to generate assembly for a file
-Move.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.s
-.PHONY : Move.cpp.s
-
 Players.o: Players.cpp.o
 .PHONY : Players.o
 
@@ -321,6 +297,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+rand_gen.o: rand_gen.cpp.o
+.PHONY : rand_gen.o
+
+# target to build an object file
+rand_gen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.o
+.PHONY : rand_gen.cpp.o
+
+rand_gen.i: rand_gen.cpp.i
+.PHONY : rand_gen.i
+
+# target to preprocess a source file
+rand_gen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.i
+.PHONY : rand_gen.cpp.i
+
+rand_gen.s: rand_gen.cpp.s
+.PHONY : rand_gen.s
+
+# target to generate assembly for a file
+rand_gen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.s
+.PHONY : rand_gen.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -339,9 +339,6 @@ help:
 	@echo "... Input_Validation.o"
 	@echo "... Input_Validation.i"
 	@echo "... Input_Validation.s"
-	@echo "... Move.o"
-	@echo "... Move.i"
-	@echo "... Move.s"
 	@echo "... Players.o"
 	@echo "... Players.i"
 	@echo "... Players.s"
@@ -354,6 +351,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rand_gen.o"
+	@echo "... rand_gen.i"
+	@echo "... rand_gen.s"
 .PHONY : help
 
 
