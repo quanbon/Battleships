@@ -225,6 +225,30 @@ Players.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Players.cpp.s
 .PHONY : Players.cpp.s
 
+Random.o: Random.cpp.o
+.PHONY : Random.o
+
+# target to build an object file
+Random.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.o
+.PHONY : Random.cpp.o
+
+Random.i: Random.cpp.i
+.PHONY : Random.i
+
+# target to preprocess a source file
+Random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.i
+.PHONY : Random.cpp.i
+
+Random.s: Random.cpp.s
+.PHONY : Random.s
+
+# target to generate assembly for a file
+Random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.s
+.PHONY : Random.cpp.s
+
 Ships.o: Ships.cpp.o
 .PHONY : Ships.o
 
@@ -297,30 +321,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-rand_gen.o: rand_gen.cpp.o
-.PHONY : rand_gen.o
-
-# target to build an object file
-rand_gen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.o
-.PHONY : rand_gen.cpp.o
-
-rand_gen.i: rand_gen.cpp.i
-.PHONY : rand_gen.i
-
-# target to preprocess a source file
-rand_gen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.i
-.PHONY : rand_gen.cpp.i
-
-rand_gen.s: rand_gen.cpp.s
-.PHONY : rand_gen.s
-
-# target to generate assembly for a file
-rand_gen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/rand_gen.cpp.s
-.PHONY : rand_gen.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +342,9 @@ help:
 	@echo "... Players.o"
 	@echo "... Players.i"
 	@echo "... Players.s"
+	@echo "... Random.o"
+	@echo "... Random.i"
+	@echo "... Random.s"
 	@echo "... Ships.o"
 	@echo "... Ships.i"
 	@echo "... Ships.s"
@@ -351,9 +354,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... rand_gen.o"
-	@echo "... rand_gen.i"
-	@echo "... rand_gen.s"
 .PHONY : help
 
 

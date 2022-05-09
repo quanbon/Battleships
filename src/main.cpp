@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
     } else {
         int time_seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::mt19937 rand_gen(time_seed);
+        // use it by doing rand_gen();
     }
 
     battleship_game.configure_game(configuration_file);
