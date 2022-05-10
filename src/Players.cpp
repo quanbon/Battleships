@@ -54,9 +54,6 @@ std::string BattleShip::Player::get_name() {
 
 }
 
-BattleShip::Board BattleShip::Player::get_placement_board() {
-    return this->placement_board;
-}
 
 void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation) {
     this->placement_board.place_ship(row_pos, col_pos, ship_size, ship_name, orientation);
@@ -103,7 +100,6 @@ bool BattleShip::Player::check_for_ship_destroyed(char ship_name) {
     if (this->player_ships[ship_name] == 0) {
         return true;
     } else { return false; }
-    // return this->player_ships[ship_name] = 0;
 }
 
 void BattleShip::Player::remove_ship(char ship_name) {

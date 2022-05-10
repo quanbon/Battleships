@@ -22,21 +22,21 @@ namespace BattleShip {
         void display_placement_board();
         void display_firing_board();
         void display_both_game_boards(std::string player_name);
+
         void place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation);
         bool valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
         bool check_for_hit(int row_choice, int col_choice, char& ship_name);
-        void decrement_ship(char ship_name);
+        bool check_for_blank_char(int row_choice, int col_choice);
+
         void ship_was_hit_on_place_board(int row_choice, int col_choice);
         void ship_was_hit_on_firing_board(int row_choice, int col_choice);
         void ship_was_miss_on_place_board(int row_choice, int col_choice);
         void ship_was_miss_on_firing_board(int row_choice, int col_choice);
+
         bool check_for_empty_map();
+        void decrement_ship(char ship_name);
         bool check_for_ship_destroyed(char ship_name);
         void remove_ship(char ship_name);
-        bool check_for_blank_char(int row_choice, int col_choice);
-
-        Board get_placement_board();
-
 
     private:
         std::string name;

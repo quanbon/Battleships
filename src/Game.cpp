@@ -118,6 +118,7 @@ void BattleShip::Game::play_game() {
 
 BattleShip::Player& BattleShip::Game::get_current_player() {
     return *this->players.at(playerTurn);
+    //Code from Butner Google Drive
 }
 
 BattleShip::Player &BattleShip::Game::get_opposing_player() {
@@ -133,6 +134,7 @@ void BattleShip::Game::change_player_turn() {
     if (playerTurn == static_cast<int>(players.size())) {
         playerTurn = 0;
     }
+    //Code from Butner Google Drive
 }
 
 
