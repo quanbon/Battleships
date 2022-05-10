@@ -201,30 +201,6 @@ Input_Validation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Input_Validation.cpp.s
 .PHONY : Input_Validation.cpp.s
 
-Move.o: Move.cpp.o
-.PHONY : Move.o
-
-# target to build an object file
-Move.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.o
-.PHONY : Move.cpp.o
-
-Move.i: Move.cpp.i
-.PHONY : Move.i
-
-# target to preprocess a source file
-Move.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.i
-.PHONY : Move.cpp.i
-
-Move.s: Move.cpp.s
-.PHONY : Move.s
-
-# target to generate assembly for a file
-Move.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Move.cpp.s
-.PHONY : Move.cpp.s
-
 Players.o: Players.cpp.o
 .PHONY : Players.o
 
@@ -248,6 +224,30 @@ Players.s: Players.cpp.s
 Players.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Players.cpp.s
 .PHONY : Players.cpp.s
+
+Random.o: Random.cpp.o
+.PHONY : Random.o
+
+# target to build an object file
+Random.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.o
+.PHONY : Random.cpp.o
+
+Random.i: Random.cpp.i
+.PHONY : Random.i
+
+# target to preprocess a source file
+Random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.i
+.PHONY : Random.cpp.i
+
+Random.s: Random.cpp.s
+.PHONY : Random.s
+
+# target to generate assembly for a file
+Random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.s
+.PHONY : Random.cpp.s
 
 Ships.o: Ships.cpp.o
 .PHONY : Ships.o
@@ -339,12 +339,12 @@ help:
 	@echo "... Input_Validation.o"
 	@echo "... Input_Validation.i"
 	@echo "... Input_Validation.s"
-	@echo "... Move.o"
-	@echo "... Move.i"
-	@echo "... Move.s"
 	@echo "... Players.o"
 	@echo "... Players.i"
 	@echo "... Players.s"
+	@echo "... Random.o"
+	@echo "... Random.i"
+	@echo "... Random.s"
 	@echo "... Ships.o"
 	@echo "... Ships.i"
 	@echo "... Ships.s"
