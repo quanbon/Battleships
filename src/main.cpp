@@ -11,6 +11,7 @@ int main(int argc, char* argv[]) {
 
     std::ifstream configuration_file;
     configuration_file.open(argv[1]);
+
     if (argc == 3) { //OPTIONAL
         int seed = 0;
         sscanf(argv[2], "%d" , seed);

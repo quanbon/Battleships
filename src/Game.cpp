@@ -14,29 +14,8 @@
 
 BattleShip::Game::Game() {
 }
-
-std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity) {
-    std::vector<char> assorted_container;
-    std::vector<BattleShip::Ships> new_ship_container;
-
-    for (int i = 0; i < ship_quantity; i++) {
-        char ship_name = ship_container.at(i).get_ship_name();
-        assorted_container.push_back(ship_name);
-    }
-
-    std::sort(assorted_container.begin(), assorted_container.end(), [](char& a, char& b) {return tolower(a) < tolower(b); });
-
-    for (int i = 0; i < ship_quantity; i++) {
-        for (int j = 0; j < ship_quantity; j++) {
-            char actual_ship_name = ship_container.at(j).get_ship_name();
-            if (assorted_container.at(i) == actual_ship_name) {
-                new_ship_container.push_back(ship_container.at(j));
-            }
-        }
-    }
-    return new_ship_container;
-}
-
+std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity);
+bool is_game_over();
 
 
 void BattleShip::Game::configure_game(std::ifstream& src) {
@@ -61,6 +40,16 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
     ship_container = ::sort_ships(ship_container, ship_container_size);
 
     set_player_board_and_ship();
+}
+
+void BattleShip::Game::set_player_board_and_ship() {
+    const int num_players = 2;
+    for(int i = 0; i < num_players; ++i) {
+        std::unique_ptr<Player> player = std::make_unique<Player>();
+        player->set_board(this->board_num_row, this->board_num_col);
+        player->set_ships(this->ship_map);
+        this->players.push_back(std::move(player));
+    }
 }
 
 void BattleShip::Game::setup_game() {
@@ -93,13 +82,6 @@ void BattleShip::Game::setup_game() {
     }
 }
 
-bool BattleShip::Game::is_game_over () {
-    if (get_opposing_player().check_for_empty_map()) {
-        std::cout << std::endl;
-        std::cout << get_current_player().get_name() << " won the game!" << std::endl;
-        return true;
-    } else { return false; }
-}
 
 void BattleShip::Game::play_game() {
     while(!is_game_over()) {
@@ -114,6 +96,14 @@ void BattleShip::Game::play_game() {
         }
         change_player_turn();
     }
+}
+
+bool BattleShip::Game::is_game_over() {
+    if (get_opposing_player().check_for_empty_map()) {
+        std::cout << std::endl;
+        std::cout << get_current_player().get_name() << " won the game!" << std::endl;
+        return true;
+    } else { return false; }
 }
 
 BattleShip::Player& BattleShip::Game::get_current_player() {
@@ -137,17 +127,6 @@ void BattleShip::Game::change_player_turn() {
     //Code from Butner Google Drive
 }
 
-
-void BattleShip::Game::set_player_board_and_ship() {
-    const int num_players = 2;
-    for(int i = 0; i < num_players; ++i) {
-        std::unique_ptr<Player> player = std::make_unique<Player>();
-        //player->set_name("Some name");
-        player->set_board(this->board_num_row, this->board_num_col);
-        player->set_ships(this->ship_map);
-        this->players.push_back(std::move(player));
-    }
-}
 
 
 void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_hit) {
@@ -211,4 +190,26 @@ void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int&
             break;
         }
     }
+}
+
+std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity) {
+    std::vector<char> assorted_container;
+    std::vector<BattleShip::Ships> new_ship_container;
+
+    for (int i = 0; i < ship_quantity; i++) {
+        char ship_name = ship_container.at(i).get_ship_name();
+        assorted_container.push_back(ship_name);
+    }
+
+    std::sort(assorted_container.begin(), assorted_container.end(), [](char& a, char& b) {return tolower(a) < tolower(b); });
+
+    for (int i = 0; i < ship_quantity; i++) {
+        for (int j = 0; j < ship_quantity; j++) {
+            char actual_ship_name = ship_container.at(j).get_ship_name();
+            if (assorted_container.at(i) == actual_ship_name) {
+                new_ship_container.push_back(ship_container.at(j));
+            }
+        }
+    }
+    return new_ship_container;
 }
