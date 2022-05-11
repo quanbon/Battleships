@@ -6,7 +6,7 @@
 #define BATTLESHIP_RANDOM_H
 #include <random>
 
-int rand_orientation (std::mt19937);
-int rand_row_or_col (std::mt19937);
+char rand_orientation (std::mt19937& generator);
+int rand_row_or_col (std::mt19937& generator, int max_num);
 
 #endif //BATTLESHIP_RANDOM_H

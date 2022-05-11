@@ -45,7 +45,12 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
 
-    //set_player_board_and_ship();
+
+
+
+
+
+
 }
 
 void BattleShip::Game::game_type_input() {
@@ -61,7 +66,7 @@ void BattleShip::Game::game_type_input() {
         get_ai_type(ai_type);
         add_human_and_ai(ai_type);
     }
-    else if(game_type== ai_v_ai) {
+    else if(game_type == ai_v_ai) {
         for(int i = 0; i < 2; ++i) {
             get_ai_type(ai_type);
             add_ai(ai_type);
@@ -120,8 +125,8 @@ void BattleShip::Game::setup_game() {
             cur_player.display_placement_board();
 
             while (true) {
-                get_ship_direction_choice(cur_player.get_name(), ship_name, orientation_choice);
-                get_two_ints(cur_player.get_name(), ship_name, ship_length, row_choice, col_choice);
+                cur_player.get_ship_direction(ship_name, orientation_choice);
+                cur_player.get_ship_placement(ship_name, ship_length, row_choice, col_choice);
                if(cur_player.valid_placement(row_choice, col_choice, ship_length, orientation_choice)) {
                    break;
                } else {
@@ -130,11 +135,12 @@ void BattleShip::Game::setup_game() {
             }
             cur_player.place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
         }
-
         cur_player.display_placement_board();
         change_player_turn();
     }
 }
+
+
 
 
 void BattleShip::Game::play_game() {
@@ -143,7 +149,7 @@ void BattleShip::Game::play_game() {
         char ship_hit;
 
         get_current_player().display_both_game_boards(get_current_player().get_name());
-        check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col);
+        check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col); //needs to change for AI
         check_for_hit(row_choice, col_choice, ship_hit);
         if (is_game_over()) {
             break;

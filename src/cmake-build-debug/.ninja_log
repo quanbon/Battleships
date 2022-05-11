@@ -1,8 +1,8 @@
 # ninja log v5
 3	403	1651704214982199565	CMakeFiles/Battleships.dir/file_reader.cpp.o	5d875a3db00530d
 2	223	1651685161836862752	CMakeFiles/Battleships.dir/Move.cpp.o	6d1be4d32620d23a
-2	326	1652223704852668545	CMakeFiles/BattleShip.dir/Players.cpp.o	c5210ce4b42b701b
-2	724	1652224363067490580	CMakeFiles/BattleShip.dir/Game.cpp.o	93abba760626ab3b
+2	319	1652292757119899934	CMakeFiles/BattleShip.dir/Players.cpp.o	c5210ce4b42b701b
+2	514	1652292757311105836	CMakeFiles/BattleShip.dir/Game.cpp.o	93abba760626ab3b
 1	261	1651771063407088140	CMakeFiles/Battleships.dir/Input_Validation.cpp.o	86246f35b62d9ca
 2	389	1651786283154028157	CMakeFiles/Battleships.dir/Players.cpp.o	830ae93302b6986c
 2	469	1651786283233830180	CMakeFiles/Battleships.dir/Game.cpp.o	362e5ea6f6608fe1
@@ -12,20 +12,10 @@
 2	335	1651823156235123704	CMakeFiles/BattleShip.dir/file_reader.cpp.o	c359569acea4797
 2	387	1651786283150980798	CMakeFiles/Battleships.dir/main.cpp.o	b07e4876d476d2f8
 1	564	1651823096410266927	CMakeFiles/BattleShip.dir/Board.cpp.o	daf13b85ed23e688
-2	357	1652223726037417526	CMakeFiles/BattleShip.dir/main.cpp.o	a1a1adb388bb1450
-0	47	1652227551997249590	build.ninja	5590bead2f36bdba
-2	21	1651787913195020943	CMakeFiles/BattleShip.dir/Move.cpp.o	bc9e592815d4b69b
-724	837	1652224363186952042	BattleShip	6e82283341bdcef
+1	373	1652292757173700158	CMakeFiles/BattleShip.dir/main.cpp.o	a1a1adb388bb1450
+0	47	1652292939092255450	build.ninja	5590bead2f36bdba
+514	609	1652292757412394318	BattleShip	6e82283341bdcef
 2	300	1651704214878288973	CMakeFiles/Battleships.dir/Ships.cpp.o	f66d2b69893db51
-1	306	1652223785077645758	CMakeFiles/BattleShip.dir/Input_Validation.cpp.o	3be7cc35b01a87cc
-4	484	1652221885334292697	CMakeFiles/BattleShip.dir/Random.cpp.o	da17ffd2cbeb23e9
-1	638	1652228305497282475	CMakeFiles/BattleShip.dir/main.cpp.o	a1a1adb388bb1450
-2	727	1652228305599470027	CMakeFiles/BattleShip.dir/Game.cpp.o	93abba760626ab3b
-727	805	1652228305680686717	BattleShip	6e82283341bdcef
-2	455	1652228322133000872	CMakeFiles/BattleShip.dir/Game.cpp.o	93abba760626ab3b
-455	491	1652228322171385701	BattleShip	6e82283341bdcef
-1	402	1652228341373470272	CMakeFiles/BattleShip.dir/Game.cpp.o	93abba760626ab3b
-402	433	1652228341407026873	BattleShip	6e82283341bdcef
 2	319	1652232479389464753	CMakeFiles/BattleShip.dir/Input_Validation.cpp.o	3be7cc35b01a87cc
-1	363	1652232479434059317	CMakeFiles/BattleShip.dir/Players.cpp.o	c5210ce4b42b701b
-1	411	1652232479483118479	CMakeFiles/BattleShip.dir/main.cpp.o	a1a1adb388bb1450
+2	21	1651787913195020943	CMakeFiles/BattleShip.dir/Move.cpp.o	bc9e592815d4b69b
+1	189	1652292165772798145	CMakeFiles/BattleShip.dir/Random.cpp.o	da17ffd2cbeb23e9

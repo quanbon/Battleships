@@ -20,12 +20,11 @@ int main(int argc, char* argv[]) {
         int time_seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::mt19937 rand_gen(time_seed);
     }
-    
 
     battleship_game.configure_game(configuration_file);
     battleship_game.game_type_input();
-    //battleship_game.setup_game();
-    //battleship_game.play_game();
+    battleship_game.setup_game();
+    battleship_game.play_game();
 
 
     return 0;

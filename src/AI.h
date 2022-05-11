@@ -5,9 +5,17 @@
 #ifndef BATTLESHIP_AI_H
 #define BATTLESHIP_AI_H
 #include "Players.h"
+#include <random>
 
 namespace BattleShip {
     class AI : public Player {
+    public:
+        void get_ship_direction(char ship_name, std::string& ship_orientation) override;
+        void get_ship_placement(char ship_name, int ship_size, int& num1, int& num2) override;
+        void set_generator( std::minstd_rand& rand_gen);
+
+    private:
+        static std::mt19937 rng;
 
     };
 }

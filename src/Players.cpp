@@ -20,7 +20,6 @@ void BattleShip::Player::set_board(int row, int col) {
     this->placement_board = Board(row, col);
     this->firing_board = Board(row, col);
 
-
 }
 
 void BattleShip::Player::set_ships(std::map<char, int >& ship_map) {
@@ -51,13 +50,18 @@ void BattleShip::Player::display_both_game_boards(std::string player_name) {
 
 std::string BattleShip::Player::get_name() {
     return this->name;
-
 }
 
+void BattleShip::Player::get_ship_direction(char ship_name, std::string& ship_orientation) {
+    get_ship_direction_choice(this->name, ship_name, ship_orientation);
+}
+
+void BattleShip::Player::get_ship_placement(char ship_name, int ship_size, int& num1, int& num2) {
+    get_two_ints(this->name, ship_name, ship_size, num1, num2);
+}
 
 void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation) {
     this->placement_board.place_ship(row_pos, col_pos, ship_size, ship_name, orientation);
-
 }
 
 bool BattleShip::Player::valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {

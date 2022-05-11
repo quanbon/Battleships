@@ -8,6 +8,7 @@
 #include <map>
 #include "Board.h"
 #include "Ships.h"
+#include "Input_Validation.h"
 
 
 namespace BattleShip {
@@ -24,7 +25,10 @@ namespace BattleShip {
         void display_firing_board();
         void display_both_game_boards(std::string player_name);
 
+        virtual void get_ship_direction(char ship_name, std::string& ship_orientation);
+        virtual void get_ship_placement(char ship_name, int ship_size, int& num1, int& num2);
         virtual void place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation);
+
         bool valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
         bool check_for_hit(int row_choice, int col_choice, char& ship_name);
         bool check_for_blank_char(int row_choice, int col_choice);
