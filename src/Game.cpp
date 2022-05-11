@@ -91,15 +91,15 @@ void BattleShip::Game::add_human_and_ai(const int &ai_type) {
 void BattleShip::Game::add_ai(const int &ai_type) {
     int cheating_ai = 1, random_ai = 2, hunt_destroy_ai = 3;
     if(ai_type == cheating_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<>(CheatingAI);
+        std::unique_ptr<Player> ai_player = std::make_unique<CheatingAI>();
         this->players.push_back(std::move(ai_player));
     }
     else if(ai_type == random_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<>(RandomAI);
+        std::unique_ptr<Player> ai_player = std::make_unique<RandomAI>();
         this->players.push_back(std::move(ai_player));
     }
     else if(ai_type == hunt_destroy_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<>(SearchAndDestroyAI);
+        std::unique_ptr<Player> ai_player = std::make_unique<SearchAndDestroyAI>();
         this->players.push_back(std::move(ai_player));
     }
 }
