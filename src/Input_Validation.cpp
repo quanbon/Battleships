@@ -120,7 +120,7 @@ void BattleShip::get_game_type (int& game_type) {
     }
 }
 
-void BattleShip::get_player_type (int& player_type) {
+void BattleShip::get_ai_type (int& player_type) {
     std::string line;
 
     while(true) {

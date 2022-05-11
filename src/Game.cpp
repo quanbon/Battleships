@@ -1,7 +1,6 @@
 //
 // Created by Quan Nguyen on 4/29/22.
 //
-
 #include "Game.h"
 #include "Board.h"
 #include "Input_Validation.h"
@@ -11,6 +10,13 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "Players.h"
+#include "AI.h"
+#include "Human.h"
+#include "CheatingAI.h"
+#include "SearchAndDestroyAI.h"
+#include "RandomAI.h"
+
 
 BattleShip::Game::Game() {
 }
@@ -39,28 +45,66 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
 
-    set_player_board_and_ship();
+    //set_player_board_and_ship();
 }
 
 void BattleShip::Game::game_type_input() {
     int game_type;
     int ai_type;
+    int human_v_human = 1, human_v_ai = 2, ai_v_ai = 3;
 
     get_game_type(game_type);
-    get_player_type(ai_type);
-
-
+    if (game_type == human_v_human) {
+        add_only_human_players();
+    }
+    else if(game_type == human_v_ai) {
+        get_ai_type(ai_type);
+        add_human_and_ai(ai_type);
+    }
+    else if(game_type== ai_v_ai) {
+        for(int i = 0; i < 2; ++i) {
+            get_ai_type(ai_type);
+            add_ai(ai_type);
+        }
+    }
 }
 
-void BattleShip::Game::set_player_board_and_ship() {
+void BattleShip::Game::add_only_human_players() {
     const int num_players = 2;
     for(int i = 0; i < num_players; ++i) {
-        std::unique_ptr<Player> player = std::make_unique<Player>();
+        std::unique_ptr<Player> player = std::make_unique<Human>();
         player->set_board(this->board_num_row, this->board_num_col);
         player->set_ships(this->ship_map);
         this->players.push_back(std::move(player));
     }
 }
+
+void BattleShip::Game::add_human_and_ai(const int &ai_type) {
+    std::unique_ptr<Player> human_player = std::make_unique<Human>();
+    human_player->set_board(this->board_num_row, this->board_num_col);
+    human_player->set_ships(this->ship_map);
+    this->players.push_back(std::move(human_player));
+
+    add_ai(ai_type);
+}
+
+void BattleShip::Game::add_ai(const int &ai_type) {
+    int cheating_ai = 1, random_ai = 2, hunt_destroy_ai = 3;
+    if(ai_type == cheating_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<>(CheatingAI);
+        this->players.push_back(std::move(ai_player));
+    }
+    else if(ai_type == random_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<>(RandomAI);
+        this->players.push_back(std::move(ai_player));
+    }
+    else if(ai_type == hunt_destroy_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<>(SearchAndDestroyAI);
+        this->players.push_back(std::move(ai_player));
+    }
+}
+
+
 
 void BattleShip::Game::setup_game() {
     for(int i = 0; i < 2; ++i) {

@@ -14,7 +14,9 @@ namespace BattleShip {
     public:
         Game();
         void configure_game(std::ifstream& src);
-        void set_player_board_and_ship();
+        void add_only_human_players();
+        void add_human_and_ai(const int &ai_type);
+        void add_ai(const int &ai_type);
         void game_type_input();
 
         BattleShip::Player& get_current_player();
@@ -40,6 +42,7 @@ namespace BattleShip {
         int board_num_row;
         int board_num_col;
         int playerTurn;
+        int game_type;
 
     };
 }

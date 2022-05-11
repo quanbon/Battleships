@@ -9,12 +9,13 @@
 #include "Board.h"
 #include "Ships.h"
 
+
 namespace BattleShip {
     class Player {
     public:
         Player();
 
-        void set_name(int player_num);
+        virtual void set_name(int player_num);
         void set_board(int row, int col);
         void set_ships(std::map<char, int >& ship_map);
 
@@ -23,7 +24,7 @@ namespace BattleShip {
         void display_firing_board();
         void display_both_game_boards(std::string player_name);
 
-        void place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation);
+        virtual void place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation);
         bool valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
         bool check_for_hit(int row_choice, int col_choice, char& ship_name);
         bool check_for_blank_char(int row_choice, int col_choice);

@@ -17,7 +17,7 @@ namespace BattleShip {
     void lowerInPlace(std::string& string);
     void get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
     void get_game_type (int& game_type);
-    void get_player_type (int& player_type);
+    void get_ai_type (int& player_type);
 
 
 }
