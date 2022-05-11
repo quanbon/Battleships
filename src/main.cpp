@@ -17,10 +17,10 @@ int main(int argc, char* argv[]) {
         seed = std::stoi(argv[2]);
     }
 
-    //battleship_game.configure_game(configuration_file, seed);
-//    battleship_game.game_type_input();
-//    battleship_game.setup_game();
-//    battleship_game.play_game();
+    battleship_game.configure_game(configuration_file, seed);
+    battleship_game.game_type_input();
+    battleship_game.setup_game();
+    battleship_game.play_game();
 
 
     return 0;

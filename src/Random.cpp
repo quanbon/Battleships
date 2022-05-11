@@ -4,18 +4,17 @@
 
 #include <random>
 
-char rand_orientation (std::minstd_rand& generator) {
+char rand_orientation (std::mt19937& generator) {
     std::uniform_int_distribution<int> dist(0, 1);
     int random_num = dist(generator);
     if(random_num == 0) {
         return 'H';
-    } else if (random_num == 1) {
+    } else  {
         return 'V';
     }
-    return 'X';
 }
 
-int rand_row_or_col (std::minstd_rand& generator, int max_num) {
+int rand_row_or_col (std::mt19937&  generator, int max_num) {
     std::uniform_int_distribution<int> dist(0, max_num);
     int random_num = dist(generator);
     return random_num;

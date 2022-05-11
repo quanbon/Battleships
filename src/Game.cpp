@@ -112,7 +112,7 @@ void BattleShip::Game::add_ai(const int &ai_type) {
 void BattleShip::Game::setup_game() {
     for(int i = 0; i < 2; ++i) {
         Player& cur_player = get_current_player();
-        cur_player.set_name(playerTurn);
+        //cur_player.set_name(playerTurn);
 
         for (auto ships: ship_container) {
             char ship_name  = ships.get_ship_name();
