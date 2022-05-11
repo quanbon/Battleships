@@ -95,14 +95,20 @@ void BattleShip::Game::add_ai(const int &ai_type) {
     int cheating_ai = 1, random_ai = 2, hunt_destroy_ai = 3;
     if(ai_type == cheating_ai) {
         std::unique_ptr<Player> ai_player = std::make_unique<CheatingAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
         this->players.push_back(std::move(ai_player));
     }
     else if(ai_type == random_ai) {
         std::unique_ptr<Player> ai_player = std::make_unique<RandomAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
         this->players.push_back(std::move(ai_player));
     }
     else if(ai_type == hunt_destroy_ai) {
         std::unique_ptr<Player> ai_player = std::make_unique<SearchAndDestroyAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
         this->players.push_back(std::move(ai_player));
     }
 }
@@ -117,6 +123,7 @@ void BattleShip::Game::setup_game() {
         for (auto ships: ship_container) {
             char ship_name  = ships.get_ship_name();
             int ship_length = ships.get_ship_length();
+
             std::string orientation_choice;
             int row_choice, col_choice;
 
