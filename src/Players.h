@@ -20,6 +20,9 @@ namespace BattleShip {
         void set_board(int row, int col);
         void set_ships(std::map<char, int >& ship_map);
 
+        int get_board_row();
+        int get_board_col();
+
         std::string get_name();
         void display_placement_board();
         void display_firing_board();

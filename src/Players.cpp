@@ -118,3 +118,11 @@ bool BattleShip::Player::check_for_blank_char(int row_choice, int col_choice) {
     }
 }
 
+int BattleShip::Player::get_board_row() {
+    return this->placement_board.get_num_rows();
+}
+
+int BattleShip::Player::get_board_col() {
+    return this->placement_board.get_num_cols();
+}
+

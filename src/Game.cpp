@@ -126,7 +126,6 @@ void BattleShip::Game::setup_game() {
 
             std::string orientation_choice;
             int row_choice, col_choice;
-
             cur_player.display_placement_board();
 
             while (true) {
