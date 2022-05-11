@@ -130,7 +130,7 @@ void BattleShip::Game::setup_game() {
 
             while (true) {
                 cur_player.get_ship_direction(ship_name, orientation_choice);
-                cur_player.get_ship_placement(ship_name, ship_length, row_choice, col_choice);
+                cur_player.get_ship_placement(ship_name, ship_length, row_choice, col_choice, orientation_choice);
                if(cur_player.valid_placement(row_choice, col_choice, ship_length, orientation_choice)) {
                    break;
                } else {

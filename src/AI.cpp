@@ -14,12 +14,17 @@ void BattleShip::AI::get_ship_direction(char ship_name, std::string &ship_orient
     ship_orientation = rand_orientation(rng);
 }
 
-void BattleShip::AI::get_ship_placement(char ship_name, int ship_size, int &row, int &col) {
+void BattleShip::AI::get_ship_placement(char ship_name, int ship_size, int &row, int &col, std::string &ship_orientation) {
     int board_row = this->get_board_row();
     int board_col = this->get_board_col();
-
-    row = rand_row_or_col(rng, board_row);
-    col = rand_row_or_col(rng, board_col);
+    if(ship_orientation == "H") {
+        row = rand_row_or_col(rng, board_row - 1);
+        col = rand_row_or_col(rng, board_col - ship_size);
+    }
+    else if (ship_orientation == "V") {
+        row = rand_row_or_col(rng, board_row - ship_size);
+        col = rand_row_or_col(rng, board_col - 1);
+    }
 }
 
 void BattleShip::AI::set_generator(const int& seed) {

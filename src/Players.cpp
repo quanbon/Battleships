@@ -56,8 +56,8 @@ void BattleShip::Player::get_ship_direction(char ship_name, std::string& ship_or
     get_ship_direction_choice(this->name, ship_name, ship_orientation);
 }
 
-void BattleShip::Player::get_ship_placement(char ship_name, int ship_size, int& num1, int& num2) {
-    get_two_ints(this->name, ship_name, ship_size, num1, num2);
+void BattleShip::Player::get_ship_placement(char ship_name, int ship_size, int &row, int &col, std::string &ship_orientation) {
+    get_two_ints(this->name, ship_name, ship_size, row, col);
 }
 
 void BattleShip::Player::place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation) {
