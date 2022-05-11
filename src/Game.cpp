@@ -24,7 +24,7 @@ std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_c
 bool is_game_over();
 
 
-void BattleShip::Game::configure_game(std::ifstream& src) {
+void BattleShip::Game::configure_game(std::ifstream& src, const int& seed) {
     int ship_container_size;
     src >> this->board_num_row;
     src >> this->board_num_col;
@@ -45,9 +45,7 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
 
-
-
-
+    AI::set_generator(seed);
 
 
 

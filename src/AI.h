@@ -12,7 +12,7 @@ namespace BattleShip {
     public:
         void get_ship_direction(char ship_name, std::string& ship_orientation) override;
         void get_ship_placement(char ship_name, int ship_size, int& num1, int& num2) override;
-        void set_generator( std::minstd_rand& rand_gen);
+        static void set_generator(const int& seed);
 
     private:
         static std::mt19937 rng;

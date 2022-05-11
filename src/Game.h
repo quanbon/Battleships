@@ -13,7 +13,7 @@ namespace BattleShip {
     class Game {
     public:
         Game();
-        void configure_game(std::ifstream& src);
+        void configure_game(std::ifstream& src, const int& seed);
         void add_only_human_players();
         void add_human_and_ai(const int &ai_type);
         void add_ai(const int &ai_type);

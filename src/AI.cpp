@@ -10,11 +10,11 @@ void BattleShip::AI::get_ship_direction(char ship_name, std::string &ship_orient
 }
 
 void BattleShip::AI::get_ship_placement(char ship_name, int ship_size, int &num1, int &num2) {
-    num1 = rand_row_or_col(rng);
-    num2 = rand_row_or_col(rng);
+    //num1 = rand_row_or_col(rng);
+    //num2 = rand_row_or_col(rng);
 }
 
-void BattleShip::AI::set_generator( std::minstd_rand& rand_gen) {
-    rand_gen = this->generator;
+void BattleShip::AI::set_generator(const int& seed) {
+    rng.seed(seed);
 
 }
