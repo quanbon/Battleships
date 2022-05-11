@@ -98,7 +98,7 @@ void BattleShip::get_ship_direction_choice(std::string player_name, char ship_na
     }
 }
 
-void BattleShip::get_type_game (int& game_type) {
+void BattleShip::get_game_type (int& game_type) {
     std::string line;
 
     while(true) {
@@ -106,7 +106,7 @@ void BattleShip::get_type_game (int& game_type) {
         std::cout << "1. Human vs Human" << std::endl;
         std::cout << "2. Human vs AI" << std::endl;
         std::cout << "3. AI vs AI" << std::endl;
-        std::cout << "Your choice: " << std::endl;
+        std::cout << "Your choice: ";
         std::getline(std::cin, line);
         std::stringstream line2parse(line);
         line2parse >> game_type;
@@ -128,7 +128,7 @@ void BattleShip::get_player_type (int& player_type) {
         std::cout << "1. Cheating AI" << std::endl;
         std::cout << "2. Random AI" << std::endl;
         std::cout << "3. Hunt Destroy AI" << std::endl;
-        std::cout << "Your choice: " << std::endl;
+        std::cout << "Your choice: ";
         std::getline(std::cin, line);
         std::stringstream line2parse(line);
         line2parse >> player_type;

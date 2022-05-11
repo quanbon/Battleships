@@ -22,8 +22,9 @@ int main(int argc, char* argv[]) {
     }
 
     battleship_game.configure_game(configuration_file);
-    battleship_game.setup_game();
-    battleship_game.play_game();
+    battleship_game.game_type_input();
+    //battleship_game.setup_game();
+    //battleship_game.play_game();
 
 
     return 0;

@@ -42,6 +42,16 @@ void BattleShip::Game::configure_game(std::ifstream& src) {
     set_player_board_and_ship();
 }
 
+void BattleShip::Game::game_type_input() {
+    int game_type;
+    int ai_type;
+
+    get_game_type(game_type);
+    get_player_type(ai_type);
+
+
+}
+
 void BattleShip::Game::set_player_board_and_ship() {
     const int num_players = 2;
     for(int i = 0; i < num_players; ++i) {
