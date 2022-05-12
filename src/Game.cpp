@@ -45,6 +45,7 @@ void BattleShip::Game::configure_game(std::ifstream& src, const int& seed) {
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
     Board board(this->board_num_row, this->board_num_col);
+    set_random_ai_vector_coords();
     AI::set_generator(seed);
 }
 
@@ -139,18 +140,21 @@ void BattleShip::Game::setup_game() {
 }
 
 void BattleShip::Game::play_game() {
+    int i;
     while(!is_game_over()) {
         int row_choice, col_choice;
         char ship_hit;
 
-        get_current_player().display_both_game_boards(get_current_player().get_name());
+        //get_current_player().display_both_game_boards(get_current_player().get_name()); if cur player == human, then we display board
         check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col); //needs to change for AI
         check_for_hit(row_choice, col_choice, ship_hit);
         if (is_game_over()) {
             break;
         }
         change_player_turn();
+        ++i;
     }
+
 }
 
 bool BattleShip::Game::is_game_over() {
@@ -263,12 +267,13 @@ void BattleShip::Game::insert_second_ai() {
 void BattleShip::Game::set_random_ai_vector_coords() {
     std::vector<std::pair<int, int>> coords;
     for(int i = 0; i < this->board_num_row; i++) {
-        for(int j = 0; j < this->board_num_col; j++)
+        for(int j = 0; j < this->board_num_col; j++) {
             std::pair<int, int> new_spot {i, j};
-            //coords.push_back(new_spot);
+            coords.push_back(new_spot);
+        }
     }
 
-    RandomAI::set_coord_vector();
+    RandomAI::set_coord_vector(coords);
 
 }
 

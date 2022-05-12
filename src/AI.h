@@ -16,7 +16,7 @@ namespace BattleShip {
         static void set_generator(const int& seed);
         virtual void display_placement_board() override;
 
-    private:
+    protected:
         static std::mt19937 rng;
 
     };
