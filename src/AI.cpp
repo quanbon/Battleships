@@ -4,8 +4,9 @@
 
 
 #include "AI.h"
+#include <iostream>
 #include "Random.h"
-#include "Board.h"
+#include <string>
 
 std::mt19937 BattleShip::AI::rng;
 
@@ -29,4 +30,17 @@ void BattleShip::AI::get_ship_placement(char ship_name, int ship_size, int &row,
 
 void BattleShip::AI::set_generator(const int& seed) {
     rng.seed(seed);
+}
+
+void BattleShip::AI::set_name(int player_num) {
+    std::string name =  "AI ";
+    name.append(std::to_string(player_num+1));
+    this->name = name;
+
+
+}
+
+void BattleShip::AI::display_placement_board() {
+    std::cout << this->name << "'s Board" << std::endl;
+    this->placement_board.display_board();
 }

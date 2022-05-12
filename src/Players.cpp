@@ -126,3 +126,7 @@ int BattleShip::Player::get_board_col() {
     return this->placement_board.get_num_cols();
 }
 
+void BattleShip::Player::get_firing_coords(int &num1, int &num2, int row_size, int col_size) {
+    BattleShip::get_firing_pos(this->name, num1, num2, row_size, col_size);
+
+}

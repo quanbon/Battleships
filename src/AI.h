@@ -12,7 +12,9 @@ namespace BattleShip {
     public:
         void get_ship_direction(char ship_name, std::string& ship_orientation) override;
         void get_ship_placement(char ship_name, int ship_size, int &row, int &col, std::string &ship_orientation) override;
+        void set_name(int player_num) override;
         static void set_generator(const int& seed);
+        virtual void display_placement_board() override;
 
     private:
         static std::mt19937 rng;

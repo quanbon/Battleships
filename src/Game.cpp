@@ -44,11 +44,8 @@ void BattleShip::Game::configure_game(std::ifstream& src, const int& seed) {
     }
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
-
+    Board board(this->board_num_row, this->board_num_col);
     AI::set_generator(seed);
-
-
-
 }
 
 void BattleShip::Game::game_type_input() {
@@ -65,10 +62,8 @@ void BattleShip::Game::game_type_input() {
         add_human_and_ai(ai_type);
     }
     else if(game_type == ai_v_ai) {
-        for(int i = 0; i < 2; ++i) {
-            get_ai_type(ai_type);
-            add_ai(ai_type);
-        }
+        get_ai_type(ai_type);
+        add_ai(ai_type);
     }
 }
 
@@ -118,15 +113,13 @@ void BattleShip::Game::add_ai(const int &ai_type) {
 void BattleShip::Game::setup_game() {
     for(int i = 0; i < 2; ++i) {
         Player& cur_player = get_current_player();
-        //cur_player.set_name(playerTurn);
-
+        cur_player.set_name(playerTurn);
+        //cur_player.display_placement_board();
         for (auto ships: ship_container) {
             char ship_name  = ships.get_ship_name();
             int ship_length = ships.get_ship_length();
-
             std::string orientation_choice;
             int row_choice, col_choice;
-            cur_player.display_placement_board();
 
             while (true) {
                 cur_player.get_ship_direction(ship_name, orientation_choice);
@@ -138,14 +131,12 @@ void BattleShip::Game::setup_game() {
                }
             }
             cur_player.place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
+            cur_player.display_placement_board();
         }
-        cur_player.display_placement_board();
+        insert_second_ai();
         change_player_turn();
     }
 }
-
-
-
 
 void BattleShip::Game::play_game() {
     while(!is_game_over()) {
@@ -221,29 +212,11 @@ void BattleShip::Game::check_for_ship_destroyed(char& ship_name) {
     }
 }
 
-void BattleShip::Game::get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
-    std::string line;
-    while (true) {
-        std::cout << player_name << ", where would you like to fire?" << std::endl;
-        std::cout<< "Enter your attack coordinate in the form row col: ";
-        std::getline(std::cin, line); //grabs the entire line
-        std::stringstream line2parse(line);
-        line2parse >> num1 >> num2;
-        if (line2parse) { //if I was able to read the number
-            std::string what_is_left;
-            line2parse >> what_is_left;
 
-
-            if (not line2parse) {//if there is nothing left we will fail to read i
-                return;
-            }
-        }
-    }
-}
 
 void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
     while(true) {
-        get_firing_pos(player_name, num1, num2, row_size, col_size);
+        get_current_player().get_firing_coords(num1, num2, row_size, col_size);
         if(!is_between(num1, num2, row_size, col_size)) {
             get_current_player().display_both_game_boards(get_current_player().get_name());
             continue;
@@ -277,3 +250,27 @@ std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_c
     }
     return new_ship_container;
 }
+
+void BattleShip::Game::insert_second_ai() {
+    if(players.size() ==1) {
+        int ai_type;
+        get_ai_type(ai_type);
+        add_ai(ai_type);
+    }
+
+}
+
+void BattleShip::Game::set_random_ai_vector_coords() {
+    std::vector<std::pair<int, int>> coords;
+    for(int i = 0; i < this->board_num_row; i++) {
+        for(int j = 0; j < this->board_num_col; j++)
+            std::pair<int, int> new_spot {i, j};
+            //coords.push_back(new_spot);
+    }
+
+    RandomAI::set_coord_vector();
+
+}
+
+
+

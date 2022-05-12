@@ -142,6 +142,27 @@ void BattleShip::get_ai_type (int& player_type) {
     }
 }
 
+void BattleShip::get_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
+    std::string line;
+    while (true) {
+        std::cout << player_name << ", where would you like to fire?" << std::endl;
+        std::cout<< "Enter your attack coordinate in the form row col: ";
+        std::getline(std::cin, line); //grabs the entire line
+        std::stringstream line2parse(line);
+        line2parse >> num1 >> num2;
+        if (line2parse) { //if I was able to read the number
+            std::string what_is_left;
+            line2parse >> what_is_left;
+
+
+            if (not line2parse) {//if there is nothing left we will fail to read i
+                return;
+            }
+        }
+    }
+}
+
+
 
 
 
