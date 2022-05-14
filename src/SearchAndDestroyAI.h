@@ -21,6 +21,8 @@ namespace BattleShip {
 
     private:
         std::vector<std::pair<int, int>> successful_hits_vector;
+        std::vector<std::pair<int, int>> hunt_positions_to_shoot;
+
     };
 }
 

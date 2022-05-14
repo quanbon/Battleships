@@ -136,8 +136,8 @@ bool BattleShip::Board::check_for_blank_char(int row_choice, int col_choice) {
 bool BattleShip::Board::bounds_and_empty_spot_check(int row_pos, int col_pos) {
     return in_bounds_vertical(row_pos, 0) and
     in_bounds_horizontal(col_pos, 0) and
-    //search_and_destroy_spot_check(row_pos, col_pos);
-    boardContents.at(row_pos).at(col_pos) == '*';
+    search_and_destroy_spot_check(row_pos, col_pos);
+    //boardContents.at(row_pos).at(col_pos) == '*';
 
 
 }
