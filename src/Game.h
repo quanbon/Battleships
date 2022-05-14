@@ -19,7 +19,6 @@ namespace BattleShip {
         void add_ai(const int &ai_type);
         void insert_second_ai();
         void game_type_input();
-        void set_random_ai_vector_coords();
 
         BattleShip::Player& get_current_player();
         BattleShip::Player& get_opposing_player();
@@ -33,6 +32,8 @@ namespace BattleShip {
         void check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size);
         void check_for_hit(int row_choice, int col_choice, char& ship_hit);
         void check_for_ship_destroyed(char& ship_name);
+        void update_game_for_hit(int row_choice, int col_choice, char& ship_hit);
+        void update_game_for_miss(int row_choice, int col_choice, char &ship_hit);
 
         std::vector<BattleShip::Ships> sort_ships(std::vector<BattleShip::Ships> ship_container);
 

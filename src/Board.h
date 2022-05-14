@@ -27,6 +27,8 @@ namespace BattleShip {
         void ship_was_hit(int row_choice, int col_choice);
         void ship_was_missed(int row_choice, int col_choice);
         bool check_for_blank_char(int row_choice, int col_choice);
+        bool bounds_and_empty_spot_check(int row_pos, int col_pos);
+        bool search_and_destroy_spot_check(int row_pos, int col_pos);
 
     private:
         //Code from Google Drive

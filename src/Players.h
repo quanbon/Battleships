@@ -32,7 +32,7 @@ namespace BattleShip {
         virtual void get_ship_placement(char ship_name, int ship_size, int &row, int &col, std::string &ship_orientation);
         virtual void place_ship(int row_pos, int col_pos, int ship_size, char ship_name, std::string orientation);
 
-        virtual void get_firing_coords(int &num1, int &num2, int row_size, int col_size);
+        virtual void get_firing_coords(int &row_pos, int &col_pos, int row_size, int col_size, Board enemy_board);
 
         bool valid_placement(int row_pos, int col_pos, int ship_size, std::string orientation_choice);
         bool check_for_hit(int row_choice, int col_choice, char& ship_name);
@@ -48,11 +48,20 @@ namespace BattleShip {
         bool check_for_ship_destroyed(char ship_name);
         void remove_ship(char ship_name);
 
+        virtual void successful_hit(int &row_pos, int &col_pos);
+
+        Board get_placement_board();
+
+        void set_coord_vector();
+
     protected:
         std::string name;
         Board placement_board;
         Board firing_board;
         std::map<char, int> player_ships;
+
+        std::vector<std::pair<int, int>> coordinate_vector;
+
 
 
     };

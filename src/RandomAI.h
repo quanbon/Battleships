@@ -11,11 +11,10 @@
 namespace BattleShip {
     class RandomAI : public AI {
     public:
-        void get_firing_coords(int &num1, int &num2, int row_size, int col_size) override;
-        static void set_coord_vector(std::vector<std::pair<int, int>>& coord_vector);
+        virtual void get_firing_coords(int &row_pos, int &col_pos, int row_size, int col_size, Board enemy_board) override;
 
-    private:
-        static std::vector<std::pair<int, int>> coordinate_vector;
+
+    protected:
     };
 }
 

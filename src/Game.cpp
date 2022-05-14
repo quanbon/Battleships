@@ -45,7 +45,6 @@ void BattleShip::Game::configure_game(std::ifstream& src, const int& seed) {
 
     ship_container = ::sort_ships(ship_container, ship_container_size);
     Board board(this->board_num_row, this->board_num_col);
-    set_random_ai_vector_coords();
     AI::set_generator(seed);
 }
 
@@ -86,29 +85,6 @@ void BattleShip::Game::add_human_and_ai(const int &ai_type) {
 
     add_ai(ai_type);
 }
-
-void BattleShip::Game::add_ai(const int &ai_type) {
-    int cheating_ai = 1, random_ai = 2, hunt_destroy_ai = 3;
-    if(ai_type == cheating_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<CheatingAI>();
-        ai_player->set_board(this->board_num_row, this->board_num_col);
-        ai_player->set_ships(this->ship_map);
-        this->players.push_back(std::move(ai_player));
-    }
-    else if(ai_type == random_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<RandomAI>();
-        ai_player->set_board(this->board_num_row, this->board_num_col);
-        ai_player->set_ships(this->ship_map);
-        this->players.push_back(std::move(ai_player));
-    }
-    else if(ai_type == hunt_destroy_ai) {
-        std::unique_ptr<Player> ai_player = std::make_unique<SearchAndDestroyAI>();
-        ai_player->set_board(this->board_num_row, this->board_num_col);
-        ai_player->set_ships(this->ship_map);
-        this->players.push_back(std::move(ai_player));
-    }
-}
-
 
 
 void BattleShip::Game::setup_game() {
@@ -190,21 +166,30 @@ void BattleShip::Game::change_player_turn() {
 
 void BattleShip::Game::check_for_hit(int row_choice, int col_choice, char& ship_hit) {
     if(get_opposing_player().check_for_hit(row_choice, col_choice, ship_hit)) {
-        get_opposing_player().decrement_ship(ship_hit);
-        get_opposing_player().ship_was_hit_on_place_board(row_choice, col_choice);
-        get_current_player().ship_was_hit_on_firing_board(row_choice, col_choice);
-
-        std::string cur_player = get_current_player().get_name();
-        std::string opp_player = get_opposing_player().get_name();
-        get_current_player().display_both_game_boards(get_current_player().get_name());
-        std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
-        check_for_ship_destroyed(ship_hit);
+        get_current_player().successful_hit(row_choice, col_choice);
+        update_game_for_hit(row_choice, col_choice, ship_hit);
     } else {
-        get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
-        get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
-        get_current_player().display_both_game_boards(get_current_player().get_name());
-        std::cout<< "Missed." << std::endl;
+        update_game_for_miss(row_choice, col_choice, ship_hit);
     }
+}
+
+void BattleShip::Game::update_game_for_hit(int row_choice, int col_choice, char &ship_hit) {
+    get_opposing_player().decrement_ship(ship_hit);
+    get_opposing_player().ship_was_hit_on_place_board(row_choice, col_choice);
+    get_current_player().ship_was_hit_on_firing_board(row_choice, col_choice);
+
+    std::string cur_player = get_current_player().get_name();
+    std::string opp_player = get_opposing_player().get_name();
+    get_current_player().display_both_game_boards(get_current_player().get_name());
+    std::cout << cur_player << " hit " << opp_player << "'s " << ship_hit <<"!" << std::endl;
+    check_for_ship_destroyed(ship_hit);
+}
+
+void BattleShip::Game::update_game_for_miss(int row_choice, int col_choice, char &ship_hit) {
+    get_current_player().ship_was_miss_on_firing_board(row_choice, col_choice);
+    get_opposing_player().ship_was_miss_on_place_board(row_choice, col_choice);
+    get_current_player().display_both_game_boards(get_current_player().get_name());
+    std::cout<< "Missed." << std::endl;
 
 }
 
@@ -217,10 +202,10 @@ void BattleShip::Game::check_for_ship_destroyed(char& ship_name) {
 }
 
 
-
 void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
     while(true) {
-        get_current_player().get_firing_coords(num1, num2, row_size, col_size);
+        Board enemy_board = get_opposing_player().get_placement_board();
+        get_current_player().get_firing_coords(num1, num2, row_size, col_size, enemy_board);
         if(!is_between(num1, num2, row_size, col_size)) {
             get_current_player().display_both_game_boards(get_current_player().get_name());
             continue;
@@ -264,18 +249,30 @@ void BattleShip::Game::insert_second_ai() {
 
 }
 
-void BattleShip::Game::set_random_ai_vector_coords() {
-    std::vector<std::pair<int, int>> coords;
-    for(int i = 0; i < this->board_num_row; i++) {
-        for(int j = 0; j < this->board_num_col; j++) {
-            std::pair<int, int> new_spot {i, j};
-            coords.push_back(new_spot);
-        }
+void BattleShip::Game::add_ai(const int &ai_type) {
+    int cheating_ai = 1, random_ai = 2, hunt_destroy_ai = 3;
+    if(ai_type == cheating_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<CheatingAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
+        this->players.push_back(std::move(ai_player));
     }
-
-    RandomAI::set_coord_vector(coords);
-
+    else if(ai_type == random_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<RandomAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
+        ai_player->set_coord_vector();
+        this->players.push_back(std::move(ai_player));
+    }
+    else if(ai_type == hunt_destroy_ai) {
+        std::unique_ptr<Player> ai_player = std::make_unique<SearchAndDestroyAI>();
+        ai_player->set_board(this->board_num_row, this->board_num_col);
+        ai_player->set_ships(this->ship_map);
+        ai_player->set_coord_vector();
+        this->players.push_back(std::move(ai_player));
+    }
 }
+
 
 
 

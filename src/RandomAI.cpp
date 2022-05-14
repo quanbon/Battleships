@@ -5,15 +5,13 @@
 #include "AI.h"
 #include "RandomAI.h"
 #include "Random.h"
-std::vector<std::pair<int, int>> BattleShip::RandomAI::coordinate_vector;
+//std::vector<std::pair<int, int>> BattleShip::RandomAI::coordinate_vector;
 
-void BattleShip::RandomAI::get_firing_coords(int &num1, int &num2, int row_size, int col_size) {
+void BattleShip::RandomAI::get_firing_coords(int &row_pos, int &col_pos, int row_size, int col_size, Board enemy_board) {
     int element = get_random_element(rng, coordinate_vector.size() -1);
-    num1 = coordinate_vector[element].first;
-    num2 = coordinate_vector[element].second;
+    row_pos = coordinate_vector[element].first;
+    col_pos = coordinate_vector[element].second;
     coordinate_vector.erase(coordinate_vector.begin() + element);
 }
 
-void BattleShip::RandomAI::set_coord_vector(std::vector<std::pair<int, int>>& coord_vector) {
-    coordinate_vector = coord_vector;
-}
+

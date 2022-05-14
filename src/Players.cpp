@@ -126,7 +126,27 @@ int BattleShip::Player::get_board_col() {
     return this->placement_board.get_num_cols();
 }
 
-void BattleShip::Player::get_firing_coords(int &num1, int &num2, int row_size, int col_size) {
-    BattleShip::get_firing_pos(this->name, num1, num2, row_size, col_size);
+void BattleShip::Player::get_firing_coords(int &row_pos, int &col_pos, int row_size, int col_size, Board enemy_board) {
+    BattleShip::get_firing_pos(this->name, row_pos, col_pos, row_size, col_size);
 
 }
+
+void BattleShip::Player::set_coord_vector() {
+    std::vector<std::pair<int, int>> coords;
+    for(int i = 0; i < this->placement_board.get_num_rows(); i++) {
+        for(int j = 0; j < this->placement_board.get_num_cols(); j++) {
+            std::pair<int, int> new_spot {i, j};
+            coords.push_back(new_spot);
+        }
+    }
+    this->coordinate_vector = coords;
+}
+
+BattleShip::Board BattleShip::Player::get_placement_board() {
+    return this->placement_board;
+}
+
+void BattleShip::Player::successful_hit(int &row_pos, int &col_pos) {
+    return;
+}
+
