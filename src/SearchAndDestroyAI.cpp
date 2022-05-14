@@ -5,6 +5,7 @@
 #include "SearchAndDestroyAI.h"
 #include "Random.h"
 #include <vector>
+#include <iostream>
 
 
 
@@ -36,33 +37,29 @@ void BattleShip::SearchAndDestroyAI::successful_hit(int &row_pos, int &col_pos) 
 }
 
 void BattleShip::SearchAndDestroyAI::hunt_mode_activated(int &row, int &col, Board enemy_board) {
-    for (const auto &hunt_pos: hunt_positions_to_shoot) {
-        if(enemy_board.bounds_and_empty_spot_check(hunt_pos.first, hunt_pos.second)) {
-            row = hunt_pos.first;
-            col = hunt_pos.second;
-            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+    for (auto Iter = hunt_positions_to_shoot.begin(); Iter != hunt_positions_to_shoot.end(); ++Iter) {
+        if(enemy_board.bounds_and_empty_spot_check(Iter->first, Iter->second)) {
+            row = Iter->first;
+            col = Iter->second;
             break;
-        } else {
-            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+        }
+        if(Iter == hunt_positions_to_shoot.end()) {
+            hunt_positions_to_shoot.clear();
         }
     }
 }
 
-bool BattleShip::SearchAndDestroyAI::can_shoot_left(Board enemy_board, int row_pos, int col_pos) {
-    return enemy_board.bounds_and_empty_spot_check(row_pos, col_pos-1);
-}
 
-bool BattleShip::SearchAndDestroyAI::can_shoot_up(BattleShip::Board enemy_board, int row_pos, int col_pos) {
-    return enemy_board.bounds_and_empty_spot_check(row_pos+1, col_pos);
-}
-
-bool BattleShip::SearchAndDestroyAI::can_shoot_right(BattleShip::Board enemy_board, int row_pos, int col_pos) {
-    return enemy_board.bounds_and_empty_spot_check(row_pos, col_pos+1);
-}
-
-bool BattleShip::SearchAndDestroyAI::can_shoot_down(BattleShip::Board enemy_board, int row_pos, int col_pos) {
-    return enemy_board.bounds_and_empty_spot_check(row_pos-1, col_pos);
-}
+//    for (const auto &hunt_pos: hunt_positions_to_shoot) {
+//        if(enemy_board.bounds_and_empty_spot_check(hunt_pos.first, hunt_pos.second)) {
+//            row = hunt_pos.first;
+//            col = hunt_pos.second;
+//            //hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+//            break;
+//        } else {
+//            //hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+//        }
+//    }
 
 
 

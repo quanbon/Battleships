@@ -62,7 +62,7 @@ void BattleShip::Board::place_ship(int row_pos, int col_pos, int ship_size, char
 }
 
 bool BattleShip::Board::in_bounds_vertical(int row_pos, int ship_size) const {
-    return row_pos > -1 and (row_pos + ship_size) <= this->num_row; //check if the starting position is in bounds
+    return row_pos > -1 and (row_pos + ship_size) <= this->num_row;
 }
 
 bool BattleShip::Board::in_bounds_horizontal(int col_pos, int ship_size) const {
@@ -92,17 +92,30 @@ bool BattleShip::Board::overlap_horizontal_check(int row_pos, int col_pos, int s
 
 bool BattleShip::Board::in_bounds_check(int row_pos, int col_pos, int ship_size, std::string orientation_choice) {
     if (orientation_choice == "H" or orientation_choice == "h") {
-        return in_bounds_horizontal(col_pos, ship_size)  and is_between(row_pos) and overlap_horizontal_check(row_pos, col_pos, ship_size);
+        return in_bounds_horizontal(col_pos, ship_size) and is_between_row(row_pos) and overlap_horizontal_check(row_pos, col_pos, ship_size);
     }
     if (orientation_choice == "V" or orientation_choice == "v") {
-        return in_bounds_vertical(row_pos, ship_size)  and is_between(col_pos) and overlap_vertical_check(row_pos, col_pos, ship_size);
+        return in_bounds_vertical(row_pos, ship_size) and is_between_col(col_pos) and overlap_vertical_check(row_pos, col_pos, ship_size);
     }
     return false;
 }
 // this could bug out
-bool BattleShip::Board::is_between(int pos) {
-    return pos > -1 and pos <= this->num_row;
+bool BattleShip::Board::is_between_row(int pos) {
+    return pos > -1 and pos < this->num_row;
 }
+
+bool BattleShip::Board::is_between_col(int pos) {
+    return pos  > -1 and pos < this->num_col;
+}
+
+bool BattleShip::Board::is_between_row_ai(int pos) {
+    return pos > -1 and pos < this->num_row;
+}
+
+bool BattleShip::Board::is_between_col_ai(int pos) {
+    return pos > -1 and pos < this->num_col;
+}
+
 
 bool BattleShip::Board::check_for_hit(int row_choice, int col_choice, char& ship_name) {
     if(this->boardContents.at(row_choice).at(col_choice) == '*' or
@@ -134,18 +147,13 @@ bool BattleShip::Board::check_for_blank_char(int row_choice, int col_choice) {
 }
 
 bool BattleShip::Board::bounds_and_empty_spot_check(int row_pos, int col_pos) {
-    return in_bounds_vertical(row_pos, 0) and
-    in_bounds_horizontal(col_pos, 0) and
+    return is_between_row_ai(row_pos) and
+    is_between_col_ai(col_pos) and
     search_and_destroy_spot_check(row_pos, col_pos);
-    //boardContents.at(row_pos).at(col_pos) == '*';
-
-
 }
 
 bool BattleShip::Board::search_and_destroy_spot_check(int row_pos, int col_pos) {
-    if(this->boardContents.at(row_pos).at(col_pos) == '*' or
-       this->boardContents.at(row_pos).at(col_pos) != 'X' or
-       this->boardContents.at(row_pos).at(col_pos) != 'O' ) {
+    if(this->boardContents.at(row_pos).at(col_pos) != 'X' and this->boardContents.at(row_pos).at(col_pos) != 'O') {
         return true;
     } else {
         return false;

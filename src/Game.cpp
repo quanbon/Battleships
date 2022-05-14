@@ -116,7 +116,6 @@ void BattleShip::Game::setup_game() {
 }
 
 void BattleShip::Game::play_game() {
-    int i;
     while(!is_game_over()) {
         int row_choice, col_choice;
         char ship_hit;
@@ -128,7 +127,6 @@ void BattleShip::Game::play_game() {
             break;
         }
         change_player_turn();
-        ++i;
     }
 
 }
