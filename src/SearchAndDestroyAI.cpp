@@ -41,25 +41,21 @@ void BattleShip::SearchAndDestroyAI::hunt_mode_activated(int &row, int &col, Boa
         if(enemy_board.bounds_and_empty_spot_check(Iter->first, Iter->second)) {
             row = Iter->first;
             col = Iter->second;
+            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
             break;
         }
         if(Iter == hunt_positions_to_shoot.end()) {
             hunt_positions_to_shoot.clear();
         }
+        else {
+            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+        }
     }
+
 }
 
 
-//    for (const auto &hunt_pos: hunt_positions_to_shoot) {
-//        if(enemy_board.bounds_and_empty_spot_check(hunt_pos.first, hunt_pos.second)) {
-//            row = hunt_pos.first;
-//            col = hunt_pos.second;
-//            //hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
-//            break;
-//        } else {
-//            //hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
-//        }
-//    }
+
 
 
 

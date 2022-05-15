@@ -116,6 +116,8 @@ void BattleShip::Game::setup_game() {
 }
 
 void BattleShip::Game::play_game() {
+
+    int i = 0;
     while(!is_game_over()) {
         int row_choice, col_choice;
         char ship_hit;
@@ -127,6 +129,7 @@ void BattleShip::Game::play_game() {
             break;
         }
         change_player_turn();
+        ++i;
     }
 
 }
@@ -202,18 +205,22 @@ void BattleShip::Game::check_for_ship_destroyed(char& ship_name) {
 
 void BattleShip::Game::check_firing_pos(std::string player_name, int& num1, int& num2, int row_size, int col_size) {
     while(true) {
-        Board enemy_board = get_opposing_player().get_placement_board();
-        get_current_player().get_firing_coords(num1, num2, row_size, col_size, enemy_board);
-        if(!is_between(num1, num2, row_size, col_size)) {
-            get_current_player().display_both_game_boards(get_current_player().get_name());
-            continue;
-        } else if(!get_current_player().check_for_blank_char(num1, num2)) {
-            get_current_player().display_both_game_boards(get_current_player().get_name());
-            continue;
-        } else {
-            break;
-        }
-    }
+                Board enemy_board = get_opposing_player().get_placement_board();
+                get_current_player().get_firing_coords(num1, num2, row_size, col_size, enemy_board);
+                if(!is_between(num1, num2, row_size, col_size)) {
+                    get_current_player().display_both_game_boards(get_current_player().get_name());
+                    continue;
+                } else if(!get_current_player().check_for_blank_char(num1, num2)) {
+                    get_current_player().display_both_game_boards(get_current_player().get_name()); //something wrong here
+                    continue;
+                } else {
+                    break;
+                }
+            }
+
+//        Board enemy_board = get_opposing_player().get_placement_board();
+//        get_current_player().get_firing_coords(num1, num2, row_size, col_size, enemy_board);
+
 }
 
 std::vector<BattleShip::Ships> sort_ships (std::vector<BattleShip::Ships> ship_container, int ship_quantity) {
