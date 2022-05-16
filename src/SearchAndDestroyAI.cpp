@@ -38,12 +38,23 @@ void BattleShip::SearchAndDestroyAI::successful_hit(int &row_pos, int &col_pos) 
 }
 
 void BattleShip::SearchAndDestroyAI::hunt_mode_activated(int &row, int &col, Board enemy_board) {
-    for (auto Iter = hunt_positions_to_shoot.begin(); Iter != hunt_positions_to_shoot.end(); ++Iter) {
-        if(enemy_board.bounds_and_empty_spot_check(Iter->first, Iter->second)) {
-            row = Iter->first;
-            col = Iter->second;
+//    for (auto Iter = hunt_positions_to_shoot.begin(); Iter != hunt_positions_to_shoot.end(); ++Iter) {
+//        if(enemy_board.bounds_and_empty_spot_check(Iter->first, Iter->second)) {
+//            row = Iter->first;
+//            col = Iter->second;
+//            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+//            break;
+//        }
+//        else {
+//            hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
+//        }
+//    }
+    while(true) {
+        if(enemy_board.bounds_and_empty_spot_check(hunt_positions_to_shoot[0].first, hunt_positions_to_shoot[0].second)){
+            row = hunt_positions_to_shoot[0].first;
+            col = hunt_positions_to_shoot[0].second;
             hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
-            break;
+            return;
         }
         else {
             hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
