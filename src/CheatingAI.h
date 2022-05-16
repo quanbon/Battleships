@@ -9,7 +9,11 @@
 
 namespace BattleShip {
     class CheatingAI : public AI {
+    public:
+        void get_firing_coords(int &row_pos, int &col_pos, int row_size, int col_size, Board enemy_board) override;
 
+    private:
+        std::vector<std::pair<int, int>> cheat_positions;
     };
 }
 

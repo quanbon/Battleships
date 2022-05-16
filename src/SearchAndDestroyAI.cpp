@@ -19,6 +19,7 @@ void BattleShip::SearchAndDestroyAI::get_firing_coords(int &row_pos, int &col_po
         coordinate_vector.erase(coordinate_vector.begin() + element);
     }
 
+
 }
 
 void BattleShip::SearchAndDestroyAI::successful_hit(int &row_pos, int &col_pos) {
@@ -44,14 +45,10 @@ void BattleShip::SearchAndDestroyAI::hunt_mode_activated(int &row, int &col, Boa
             hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
             break;
         }
-        if(Iter == hunt_positions_to_shoot.end()) {
-            hunt_positions_to_shoot.clear();
-        }
         else {
             hunt_positions_to_shoot.erase(hunt_positions_to_shoot.begin());
         }
     }
-
 }
 
 

@@ -34,6 +34,9 @@ namespace BattleShip {
         bool is_between_row_ai(int pos);
         bool is_between_col_ai(int pos);
 
+        void hacks_for_cheating_ai(int &row_pos, int &col_pos, std::vector<std::pair<int, int>>& hacks);
+
+
 
     private:
         //Code from Google Drive
