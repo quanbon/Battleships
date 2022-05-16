@@ -44,6 +44,9 @@ void BattleShip::SearchAndDestroyAI::destroy_mode_activated(int &row, int &col, 
             destroy_positions_to_shoot.erase(destroy_positions_to_shoot.begin());
             return;
         }
+        if(destroy_positions_to_shoot.size() < 1) {
+            return;
+        }
         else {
             destroy_positions_to_shoot.erase(destroy_positions_to_shoot.begin());
         }
