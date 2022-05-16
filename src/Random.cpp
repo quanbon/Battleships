@@ -23,7 +23,7 @@ int rand_row_or_col (std::mt19937&  generator, int max_num) {
 }
 
 int get_random_element(std::mt19937 &generator, int vector_size) {
-    std::uniform_int_distribution<int> dist(0, vector_size - 1);
+    std::uniform_int_distribution<int> dist(0, vector_size); // vector size was getting subtracted by 2
     int random_num = dist(generator);
     return random_num;
 }

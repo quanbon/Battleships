@@ -163,8 +163,8 @@ bool BattleShip::Board::search_and_destroy_spot_check(int row_pos, int col_pos) 
 void BattleShip::Board::hacks_for_cheating_ai(int &row_pos, int &col_pos, std::vector<std::pair<int, int>>& hacks) {
     for(int i = 0; i < get_num_cols(); ++i) {
         for(int j = 0; j < get_num_rows(); ++j) {
-            if(boardContents.at(j).at(i) != '*') {
-                std::pair<int, int> cheating_spots {j, i};
+            if(boardContents.at(i).at(j) != '*') {
+                std::pair<int, int> cheating_spots {i, j};
                 hacks.push_back(cheating_spots);
             }
         }

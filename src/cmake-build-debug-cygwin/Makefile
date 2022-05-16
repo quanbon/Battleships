@@ -129,6 +129,30 @@ BattleShip/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/build
 .PHONY : BattleShip/fast
 
+AI.o: AI.cpp.o
+.PHONY : AI.o
+
+# target to build an object file
+AI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/AI.cpp.o
+.PHONY : AI.cpp.o
+
+AI.i: AI.cpp.i
+.PHONY : AI.i
+
+# target to preprocess a source file
+AI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/AI.cpp.i
+.PHONY : AI.cpp.i
+
+AI.s: AI.cpp.s
+.PHONY : AI.s
+
+# target to generate assembly for a file
+AI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/AI.cpp.s
+.PHONY : AI.cpp.s
+
 Board.o: Board.cpp.o
 .PHONY : Board.o
 
@@ -152,6 +176,30 @@ Board.s: Board.cpp.s
 Board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Board.cpp.s
 .PHONY : Board.cpp.s
+
+CheatingAI.o: CheatingAI.cpp.o
+.PHONY : CheatingAI.o
+
+# target to build an object file
+CheatingAI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/CheatingAI.cpp.o
+.PHONY : CheatingAI.cpp.o
+
+CheatingAI.i: CheatingAI.cpp.i
+.PHONY : CheatingAI.i
+
+# target to preprocess a source file
+CheatingAI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/CheatingAI.cpp.i
+.PHONY : CheatingAI.cpp.i
+
+CheatingAI.s: CheatingAI.cpp.s
+.PHONY : CheatingAI.s
+
+# target to generate assembly for a file
+CheatingAI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/CheatingAI.cpp.s
+.PHONY : CheatingAI.cpp.s
 
 Game.o: Game.cpp.o
 .PHONY : Game.o
@@ -249,6 +297,54 @@ Random.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/Random.cpp.s
 .PHONY : Random.cpp.s
 
+RandomAI.o: RandomAI.cpp.o
+.PHONY : RandomAI.o
+
+# target to build an object file
+RandomAI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/RandomAI.cpp.o
+.PHONY : RandomAI.cpp.o
+
+RandomAI.i: RandomAI.cpp.i
+.PHONY : RandomAI.i
+
+# target to preprocess a source file
+RandomAI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/RandomAI.cpp.i
+.PHONY : RandomAI.cpp.i
+
+RandomAI.s: RandomAI.cpp.s
+.PHONY : RandomAI.s
+
+# target to generate assembly for a file
+RandomAI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/RandomAI.cpp.s
+.PHONY : RandomAI.cpp.s
+
+SearchAndDestroyAI.o: SearchAndDestroyAI.cpp.o
+.PHONY : SearchAndDestroyAI.o
+
+# target to build an object file
+SearchAndDestroyAI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/SearchAndDestroyAI.cpp.o
+.PHONY : SearchAndDestroyAI.cpp.o
+
+SearchAndDestroyAI.i: SearchAndDestroyAI.cpp.i
+.PHONY : SearchAndDestroyAI.i
+
+# target to preprocess a source file
+SearchAndDestroyAI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/SearchAndDestroyAI.cpp.i
+.PHONY : SearchAndDestroyAI.cpp.i
+
+SearchAndDestroyAI.s: SearchAndDestroyAI.cpp.s
+.PHONY : SearchAndDestroyAI.s
+
+# target to generate assembly for a file
+SearchAndDestroyAI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BattleShip.dir/build.make CMakeFiles/BattleShip.dir/SearchAndDestroyAI.cpp.s
+.PHONY : SearchAndDestroyAI.cpp.s
+
 Ships.o: Ships.cpp.o
 .PHONY : Ships.o
 
@@ -330,9 +426,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BattleShip"
+	@echo "... AI.o"
+	@echo "... AI.i"
+	@echo "... AI.s"
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
+	@echo "... CheatingAI.o"
+	@echo "... CheatingAI.i"
+	@echo "... CheatingAI.s"
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"
@@ -345,6 +447,12 @@ help:
 	@echo "... Random.o"
 	@echo "... Random.i"
 	@echo "... Random.s"
+	@echo "... RandomAI.o"
+	@echo "... RandomAI.i"
+	@echo "... RandomAI.s"
+	@echo "... SearchAndDestroyAI.o"
+	@echo "... SearchAndDestroyAI.i"
+	@echo "... SearchAndDestroyAI.s"
 	@echo "... Ships.o"
 	@echo "... Ships.i"
 	@echo "... Ships.s"

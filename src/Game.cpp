@@ -109,6 +109,7 @@ void BattleShip::Game::setup_game() {
             }
             cur_player.place_ship(row_choice, col_choice, ship_length, ship_name, orientation_choice);
             cur_player.display_placement_board();
+            std::cout << std::endl;
         }
         insert_second_ai();
         change_player_turn();
@@ -125,6 +126,7 @@ void BattleShip::Game::play_game() {
         //get_current_player().display_both_game_boards(get_current_player().get_name()); if cur player == human, then we display board
         check_firing_pos(get_current_player().get_name(), row_choice, col_choice, this->board_num_row, this->board_num_col); //needs to change for AI
         check_for_hit(row_choice, col_choice, ship_hit);
+        std::cout << std::endl;
         if (is_game_over()) {
             break;
         }
@@ -136,7 +138,6 @@ void BattleShip::Game::play_game() {
 
 bool BattleShip::Game::is_game_over() {
     if (get_opposing_player().check_for_empty_map()) {
-        std::cout << std::endl;
         std::cout << get_current_player().get_name() << " won the game!" << std::endl;
         return true;
     } else { return false; }
