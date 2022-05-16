@@ -36,7 +36,9 @@ void BattleShip::SearchAndDestroyAI::successful_hit(int &row_pos, int &col_pos) 
 
 void BattleShip::SearchAndDestroyAI::destroy_mode_activated(int &row, int &col, Board enemy_board) {
     while(true) {
-        if(enemy_board.bounds_and_empty_spot_check(destroy_positions_to_shoot[0].first, destroy_positions_to_shoot[0].second)){
+        if(destroy_positions_to_shoot.size() < 1) {
+            return;
+        } if(enemy_board.bounds_and_empty_spot_check(destroy_positions_to_shoot[0].first, destroy_positions_to_shoot[0].second)){
             row = destroy_positions_to_shoot[0].first;
             col = destroy_positions_to_shoot[0].second;
             auto item = destroy_positions_to_shoot[0];
@@ -44,9 +46,7 @@ void BattleShip::SearchAndDestroyAI::destroy_mode_activated(int &row, int &col, 
             destroy_positions_to_shoot.erase(destroy_positions_to_shoot.begin());
             return;
         }
-        if(destroy_positions_to_shoot.size() < 1) {
-            return;
-        }
+
         else {
             destroy_positions_to_shoot.erase(destroy_positions_to_shoot.begin());
         }
